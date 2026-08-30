@@ -1091,28 +1091,720 @@
   cursor: pointer;
 }
 
-.strategyTabs {
+/* =========================================================
+   dFARMERS STRATEGY DESK
+   ========================================================= */
+
+.strategyDeskPanel {
   position: relative;
+  width: 100%;
+  margin: 18px 0 0;
+  border: 1px solid #2a302b;
+  border-radius: 0;
+  overflow: hidden;
+  background: #101310;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.015);
 }
 
-.strategyTabOptions {
+.strategyDeskTop {
+  min-height: 178px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 24px;
+  border-bottom: 1px solid #2b302c;
+  background:
+    linear-gradient(180deg, rgba(54,91,61,0.09), transparent 76%),
+    #131613;
 }
 
-.strategyDesk {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: #72a97b;
-  font-size: 13px;
+.strategyDeskHeading {
+  min-width: 0;
+  max-width: 620px;
+}
+
+.strategyDeskKicker {
+  display: block;
+  margin-bottom: 9px;
+  color: #566159;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.strategyDeskHeading h2 {
+  margin: 0;
+  color: #e1e5df;
+  font-size: 24px;
+  line-height: 1;
   font-weight: 700;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+}
+
+.strategyDeskHeading p {
+  max-width: 600px;
+  margin: 13px 0 0;
+  color: #667068;
+  font-size: 9.5px;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+}
+
+/* Risk selector replaces AVAILABLE / DISPLAY / EXECUTION. */
+.strategyRiskPanel {
+  width: 430px;
+  flex: 0 0 430px;
+  align-self: center;
+  border: 1px solid #303730;
+  background: #0f120f;
+}
+
+.strategyRiskTabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid #303730;
+}
+
+.strategyRiskTab {
+  min-height: 62px;
+  padding: 10px;
+  border: 0;
+  border-right: 1px solid #303730;
+  background: #111411;
+  color: #59635b;
+  text-align: left;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.strategyRiskTab:last-child {
+  border-right: 0;
+}
+
+.strategyRiskTab span {
+  display: block;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.strategyRiskTab small {
+  display: block;
+  margin-top: 7px;
+  color: #79857b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.strategyRiskTab:hover {
+  background: #171b17;
+  color: #aab5ad;
+}
+
+.strategyRiskTab.active {
+  color: #72a97b;
+  background: linear-gradient(180deg, rgba(70,111,77,0.10), transparent), #182019;
+  box-shadow: inset 0 -2px 0 #72a97b;
+}
+
+.strategyRiskExplanation {
+  min-height: 82px;
+  padding: 12px 13px 13px;
+  background: #101310;
+}
+
+.strategyRiskEyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #4d574f;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.strategyRiskExplanation p {
+  margin: 0;
+  color: #69746b;
+  font-size: 10px;
+  line-height: 1.55;
+  letter-spacing: 0.035em;
+}
+
+.strategyDeskToolbar {
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid #292e2a;
+  background: #151815;
+}
+
+.strategyDeskToolbar .strategyTabOptions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.strategyDeskToolbar .tab {
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 8px 13px;
+  background: transparent;
+  color: #626a63;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  cursor: pointer;
+}
+
+.strategyDeskToolbar .tab.active {
+  color: #dce2dc;
+  border-color: #46614b;
+  background: #192019;
+}
+
+.strategyDeskToolbar .tab small {
+  margin-left: 5px;
+  color: #7d877e;
+  font-size: 8px;
+}
+
+.strategyDeskPage {
+  color: #4f5851;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.strategyDeskRows {
+  width: 100%;
+  background: #111411;
+}
+
+.strategyDeskColumnLabels,
+.strategyDeskRow {
+  display: grid;
+  grid-template-columns: 30px 50px minmax(175px,0.9fr) minmax(260px,1.45fr) minmax(115px,0.7fr) 32px;
+  gap: 14px;
+}
+
+.strategyDeskColumnLabels {
+  min-height: 31px;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #242a25;
+  color: #424b44;
+  background: #0f120f;
+  font-size: 7px;
+  letter-spacing: 0.13em;
+}
+
+.strategyDeskColumnLabels span:nth-child(1) { grid-column: 3; }
+.strategyDeskColumnLabels span:nth-child(2) { grid-column: 4; }
+.strategyDeskColumnLabels span:nth-child(3) { grid-column: 5; }
+
+.strategyDeskRow {
+  min-height: 82px;
+  align-items: center;
+  padding: 9px 20px;
+  border-bottom: 1px solid #282d29;
+  background: #121512;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.strategyDeskRow:last-child {
+  border-bottom: 0;
+}
+
+.strategyDeskRow:hover {
+  background: linear-gradient(90deg, rgba(70,111,77,0.075), transparent 70%), #171b17;
+  border-color: #39443b;
+}
+
+.strategyRank {
+  color: #3f4941;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.strategyAvatar {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border: 1px solid #3d5c45;
+  border-radius: 7px;
+  background: #1a1e1a;
+}
+
+.strategyAvatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.strategyIdentity {
+  min-width: 0;
+}
+
+.strategyName {
+  overflow: hidden;
+  color: #72a97b;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
-.strategyDescription {
-  justify-content: center;
+
+.strategyTags {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 7px;
+}
+
+.strategyTags span {
+  padding: 3px 5px;
+  border: 1px solid #303831;
+  color: #59645b;
+  background: #151915;
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+}
+
+.strategyDeskRow .strategyDescription {
+  min-width: 0;
+  color: #687269;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.045em;
+  text-align: left;
+}
+
+.strategyDeskRow .strategyDescription span {
+  display: block;
+  white-space: normal;
+}
+
+.strategyBehavior {
+  min-width: 0;
+  padding-left: 15px;
+  border-left: 1px solid #282f29;
+}
+
+.strategyBehavior span {
+  display: block;
+  color: #4d574f;
+  font-size: 9.5px;
+  letter-spacing: 0.13em;
+}
+
+.strategyBehavior strong {
+  display: block;
+  overflow: hidden;
+  margin-top: 5px;
+  color: #a5b1a7;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.strategyAddButton {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+  border: 1px solid #bfc6c0;
+  border-radius: 2px;
+  background: #e5e8e5;
+  color: #111411;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, box-shadow 120ms ease;
+}
+
+.strategyAddButton:hover {
+  transform: translateY(-1px);
+  background: #f0f2f0;
+  box-shadow: 0 0 12px rgba(114,169,123,0.12);
+}
+
+.strategyDeskFooter {
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-top: 1px solid #292e2a;
+  background: #141714;
+}
+
+.strategyDeskRange {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: #4f5951;
+  font-size: 8px;
+  letter-spacing: 0.11em;
+}
+
+.strategyDeskRange strong {
+  color: #9ba59d;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.strategyDeskFooter .pagination {
+  display: flex;
+  gap: 5px;
+  border: 0;
+  overflow: visible;
+}
+
+.strategyDeskFooter .pagination button {
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  border: 1px solid #303730;
+  border-radius: 0;
+  color: #7a847c;
+  background: #171a17;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.strategyDeskFooter .pagination button:hover:not(:disabled) {
+  border-color: #4c6952;
+  color: #9eb0a1;
+  background: #1a211b;
+}
+
+.strategyDeskFooter .pagination button:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+@media (max-width: 900px) {
+  .strategyDeskTop { flex-direction: column; }
+  .strategyRiskPanel { width: 100%; flex-basis: auto; }
+}
+
+@media (max-width: 760px) {
+  .strategyDeskTop { padding: 20px 16px; }
+
+  .strategyDeskColumnLabels,
+  .strategyDeskRow {
+    grid-template-columns: 22px 44px minmax(0,1fr) 30px;
+    gap: 10px;
+  }
+
+  .strategyDeskColumnLabels {
+    padding: 0 13px;
+  }
+
+  .strategyDeskColumnLabels span:nth-child(1) { grid-column: 3; }
+  .strategyDeskColumnLabels span:nth-child(2),
+  .strategyDeskColumnLabels span:nth-child(3) { display: none; }
+
+  .strategyDeskRow {
+    min-height: 72px;
+    padding: 8px 13px;
+  }
+
+  .strategyDeskRow .strategyDescription,
+  .strategyDeskRow .strategyBehavior {
+    display: none;
+  }
+
+  .strategyAvatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .strategyRiskExplanation {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .strategyDeskHeading h2 { font-size: 20px; }
+  .strategyDeskHeading p { font-size: 8px; }
+
+  .strategyRiskTab {
+    min-height: 56px;
+    padding: 8px 6px;
+  }
+
+  .strategyRiskTab span { font-size: 6px; }
+  .strategyRiskExplanation p { font-size: 10px; }
+
+  .strategyDeskRow {
+    grid-template-columns: 18px 40px minmax(0,1fr) 27px;
+    min-height: 64px;
+    padding: 7px 10px;
+  }
+
+  .strategyAvatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .strategyName { font-size: 11px; }
+
+  .strategyAddButton {
+    width: 23px;
+    height: 23px;
+    font-size: 15px;
+  }
+}
+/* =========================================================
+   STRATEGY DESK — CENTERED WIDTH
+   ========================================================= */
+
+
+/* =========================================================
+   dFarmers STRATEGY DESK — FINAL LAYOUT OVERRIDE
+   ========================================================= */
+
+/* Remove the old top-right risk panel layout if any old markup remains. */
+.strategyDeskTop {
+  display: block !important;
+  min-height: 150px !important;
+}
+
+.strategyDeskTop .strategyRiskPanel {
+  display: none !important;
+}
+
+/* The red-outline area becomes the actual filter/navigation row. */
+.strategyDeskToolbar {
+  width: 100%;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 20px;
+  gap: 20px;
+  border-top: 1px solid #292e2a;
+  border-bottom: 1px solid #292e2a;
+  background: #151815;
+}
+
+.strategyDeskFilters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.strategyDeskFilters .tab {
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 8px 13px;
+  background: transparent;
+  color: #626a63;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  cursor: pointer;
+}
+
+.strategyDeskFilters .tab:hover {
+  color: #b7c0b8;
+  border-color: #303730;
+}
+
+.strategyDeskFilters .tab.active {
+  color: #dce2dc;
+  border-color: #46614b;
+  background: #192019;
+}
+
+.strategyDeskFilters .tab small {
+  margin-left: 5px;
+  color: #7d877e;
+  font-size: 8px;
+}
+
+/* Visually separate the risk controls from All / Yours. */
+.strategyDeskFilters .riskTab {
+  margin-left: 4px;
+  padding-left: 14px;
+  border-left: 1px solid #303730;
+}
+
+.strategyDeskFilters .riskTab.active {
+  color: #72a97b;
+  border-color: #46614b;
+  background: #182019;
+  box-shadow: inset 0 -2px 0 #72a97b;
+}
+
+.strategyDeskPage {
+  flex: 0 0 auto;
+  color: #4f5851;
+  font-size: 8px;
+  letter-spacing: .12em;
+}
+
+/* The explanation now belongs to the selected filter, not a floating panel. */
+.strategyRiskExplanation {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-sizing: border-box;
+  padding: 9px 20px;
+  border-bottom: 1px solid #292e2a;
+  background: #101310;
+}
+
+.strategyRiskEyebrow {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #4d574f;
+  font-size: 6.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.strategyRiskExplanation p {
+  margin: 0;
+  max-width: 900px;
+  color: #69746b;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: .035em;
+}
+
+/* Keep the whole desk aligned to the page content rather than viewport edges. */
+.strategyDeskPanel {
+  width: min(1100px, calc(100% - 48px)) !important;
+  margin: 18px auto 0 !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .strategyDeskToolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 12px 16px;
+  }
+
+  .strategyDeskPage {
+    align-self: flex-end;
+  }
+
+  .strategyRiskExplanation {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+}
+
+@media (max-width: 760px) {
+  .strategyDeskPanel {
+    width: calc(100% - 24px) !important;
+  }
+
+  .strategyDeskToolbar {
+    padding: 10px 13px;
+  }
+
+  .strategyDeskFilters {
+    width: 100%;
+  }
+}
+/* =========================================================
+   STRATEGY DESK — CENTERED WIDTH
+   ========================================================= */
+
+.strategyDeskPanel {
+  width: min(1100px, calc(100% - 48px));
+  margin: 18px auto 0;
+  box-sizing: border-box;
+}
+
+/* Keep the Strategy Desk comfortably inside the page */
+@media (max-width: 1150px) {
+  .strategyDeskPanel {
+    width: calc(100% - 36px);
+  }
+}
+
+@media (max-width: 760px) {
+  .strategyDeskPanel {
+    width: calc(100% - 24px);
+    margin-top: 14px;
+  }
+}
+/* Tighten Farmer header area */
+.shellTop {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: 18px !important;
+  padding-bottom: 26px !important;
+}
+
+/* Remove unnecessary space around the title */
+.titleBlock {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.titleLine {
+  margin: 4px 0 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Keep the info bar close to the tagline */
+.infoBar {
+  margin-top: 0 !important;
+}
+@media (max-width: 600px) {
+  .personalityAssets {
+    gap: 3px !important;
+  }
+
+  .personalityAssets > * {
+    width: clamp(14px, 4vw, 22px) !important;
+    height: clamp(14px, 4vw, 22px) !important;
+    flex-shrink: 1 !important;
+  }
+}
+.strategyDeskTop {
+  width: 100% !important;
+  display: block !important;
+}
+
+.strategyDeskHeading {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
   text-align: center;
+  padding: 0 40px;
+}
+
+.strategyDeskKicker,
+.strategyDeskHeading h2 {
+  width: 100%;
+  text-align: center !important;
+}
+
+.strategyDeskHeading p {
+  width: 100%;
+  max-width: 900px;
+  margin: 10px auto 0;
+  text-align: left;
 }
