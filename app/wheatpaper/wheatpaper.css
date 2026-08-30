@@ -1,0 +1,639 @@
+/* dFARMERS WHEATPAPER
+   Scoped stylesheet. Does not affect the rest of the site.
+*/
+
+.wheatpaper {
+  --wp-bg: #0a0d0b;
+  --wp-panel: #101512;
+  --wp-panel-2: #141a16;
+  --wp-border: #29362e;
+  --wp-border-strong: #3b4d41;
+  --wp-text: #dce3dd;
+  --wp-muted: #909b93;
+  --wp-green: #4b9968;
+  --wp-green-bright: #6dbd88;
+  --wp-green-dark: #183a27;
+  --wp-red: #a66a5e;
+  --wp-red-dark: #422a25;
+
+  min-height: 100vh;
+  padding: 0 0 100px;
+  color: var(--wp-text);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(53, 104, 71, .13), transparent 38rem),
+    linear-gradient(180deg, #090b0a 0%, #0c100e 48%, #090b0a 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.wheatpaper::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .16;
+  background-image:
+    linear-gradient(rgba(255,255,255,.017) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.011) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+.wheatpaper .wpCover,
+.wheatpaper .wpSection,
+.wheatpaper .wpSources {
+  width: min(1180px, calc(100% - 40px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wheatpaper .wpCover {
+  min-height: 690px;
+  padding: 120px 0 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid var(--wp-border);
+}
+
+.wheatpaper .wpCover::before {
+  content: "dFARMERS / TECHNICAL ARCHIVE";
+  position: absolute;
+  top: 34px;
+  left: 0;
+  color: #4a594f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .22em;
+}
+
+.wheatpaper .wpKicker,
+.wheatpaper .wpSectionLabel {
+  color: var(--wp-green-bright);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.wheatpaper .wpCover h1 {
+  margin: 18px 0 22px;
+  max-width: 950px;
+  color: #edf2ed;
+  font-size: clamp(54px, 8vw, 104px);
+  line-height: .9;
+  letter-spacing: -.055em;
+  font-weight: 900;
+}
+
+.wheatpaper .wpSubtitle {
+  max-width: 900px;
+  color: #a1aaa3;
+  font-size: clamp(17px, 2vw, 23px);
+  line-height: 1.55;
+}
+
+.wheatpaper .wpMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 38px;
+}
+
+.wheatpaper .wpMeta span {
+  padding: 9px 13px;
+  border: 1px solid var(--wp-border);
+  background: rgba(19, 28, 22, .68);
+  color: #b5beb7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.wheatpaper .wpRule {
+  width: 100%;
+  height: 1px;
+  margin: 35px 0 28px;
+  background: linear-gradient(90deg, var(--wp-green), transparent);
+}
+
+.wheatpaper .wpAbstract {
+  max-width: 920px;
+  margin: 0;
+  color: #bac2bc;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.wheatpaper .wpContents {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  border-bottom: 1px solid var(--wp-border);
+}
+
+.wheatpaper .wpContents > span {
+  grid-column: 1 / -1;
+  margin-bottom: 8px;
+  color: var(--wp-green-bright);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.wheatpaper .wpContents a {
+  padding: 13px 14px;
+  border: 1px solid #202a24;
+  background: #0f1311;
+  color: #89958d;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  transition: .2s ease;
+}
+
+.wheatpaper .wpContents a:hover {
+  color: #e0e7e1;
+  border-color: #3c5946;
+  background: #141c17;
+  transform: translateY(-1px);
+}
+
+.wheatpaper .wpSection {
+  padding: 105px 0;
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 45px;
+  border-bottom: 1px solid var(--wp-border);
+}
+
+.wheatpaper .wpSectionNumber {
+  padding-top: 5px;
+  color: #405047;
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -.04em;
+}
+
+.wheatpaper .wpSectionBody {
+  min-width: 0;
+}
+
+.wheatpaper .wpSectionBody > h2 {
+  max-width: 950px;
+  margin: 13px 0 28px;
+  color: #e7ece8;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1;
+  letter-spacing: -.035em;
+  font-weight: 900;
+}
+
+.wheatpaper .wpSectionBody > p {
+  max-width: 900px;
+  margin: 0 0 24px;
+  color: #afb8b1;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.wheatpaper .wpEquation {
+  margin: 38px 0 0;
+  padding: 21px 24px;
+  border: 1px solid #30473a;
+  border-left: 3px solid var(--wp-green);
+  background: linear-gradient(90deg, rgba(34, 70, 47, .28), rgba(14, 19, 16, .8));
+  color: #b9d3c1;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: .07em;
+  overflow-x: auto;
+}
+
+.wheatpaper .wpDiagram {
+  margin: 42px 0 10px;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.wheatpaper .wpNode {
+  min-width: 150px;
+  min-height: 125px;
+  flex: 1;
+  padding: 20px;
+  border: 1px solid var(--wp-border-strong);
+  background: linear-gradient(145deg, rgba(36, 55, 43, .45), rgba(15, 19, 17, .98));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.wheatpaper .wpNode::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(88, 119, 99, .08);
+  pointer-events: none;
+}
+
+.wheatpaper .wpNodeRed {
+  border-color: #5a3934;
+  background: linear-gradient(145deg, rgba(73, 43, 38, .34), rgba(15, 19, 17, .98));
+}
+
+.wheatpaper .wpNode small,
+.wheatpaper .wpMiniCard small {
+  color: #68766d;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.wheatpaper .wpNode strong {
+  margin: 12px 0 7px;
+  color: #dce5de;
+  font-size: 15px;
+  letter-spacing: .03em;
+}
+
+.wheatpaper .wpNode span {
+  color: #78857c;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: .08em;
+}
+
+.wheatpaper .wpArrow,
+.wheatpaper .wpDown {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wp-green);
+  font-size: 20px;
+}
+
+.wheatpaper .wpVertical {
+  flex-direction: column;
+  align-items: center;
+}
+
+.wheatpaper .wpVertical .wpNode {
+  width: min(520px, 100%);
+}
+
+.wheatpaper .wpDown {
+  height: 24px;
+}
+
+.wheatpaper .wpGrid2,
+.wheatpaper .wpGrid3 {
+  display: grid;
+  gap: 12px;
+  margin: 40px 0;
+}
+
+.wheatpaper .wpGrid2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wheatpaper .wpGrid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.wheatpaper .wpMiniCard {
+  min-height: 150px;
+  padding: 24px;
+  border: 1px solid var(--wp-border);
+  background: linear-gradient(145deg, #141916, #0e1210);
+  position: relative;
+}
+
+.wheatpaper .wpMiniCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 2px;
+  background: var(--wp-green);
+}
+
+.wheatpaper .wpMiniCard strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #dce3dd;
+  font-size: 14px;
+  letter-spacing: .04em;
+}
+
+.wheatpaper .wpMiniCard > span {
+  display: block;
+  margin-bottom: 15px;
+  color: #66806e;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.wheatpaper .wpMiniCard p {
+  margin: 0;
+  color: #8f9a92;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.wheatpaper .wpCode {
+  margin: 38px 0;
+  padding: 27px;
+  border: 1px solid #27352d;
+  background: #080a09;
+  color: #9eb4a5;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  line-height: 1.85;
+  white-space: pre;
+  overflow-x: auto;
+  box-shadow: inset 0 0 40px rgba(28, 61, 41, .08);
+}
+
+.wheatpaper .wpTable {
+  margin: 40px 0;
+  border: 1px solid var(--wp-border);
+  background: #0d110f;
+  overflow: hidden;
+}
+
+.wheatpaper .wpTable > div {
+  display: grid;
+  grid-template-columns: minmax(160px, .7fr) minmax(0, 1.5fr);
+  border-top: 1px solid #202821;
+}
+
+.wheatpaper .wpTable > div:first-child {
+  border-top: 0;
+}
+
+.wheatpaper .wpTableHeader {
+  background: #18211b;
+}
+
+.wheatpaper .wpTable span {
+  padding: 15px 18px;
+  color: #9ba59d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.wheatpaper .wpTable > div:not(.wpTableHeader) span:first-child {
+  color: #cbd5ce;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.wheatpaper .wpTableHeader span {
+  color: var(--wp-green-bright);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .13em;
+}
+
+.wheatpaper .wpFlow {
+  margin: 42px 0;
+  padding-bottom: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.wheatpaper .wpFlow > div {
+  min-width: 145px;
+  min-height: 105px;
+  padding: 20px;
+  border: 1px solid var(--wp-border);
+  background: #111613;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wheatpaper .wpFlow strong {
+  margin-bottom: 8px;
+  color: #dbe3dd;
+  font-size: 13px;
+}
+
+.wheatpaper .wpFlow span {
+  color: #718077;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: .08em;
+}
+
+.wheatpaper .wpFlow b {
+  color: var(--wp-green);
+  font-size: 19px;
+}
+
+.wheatpaper .wpFlowFinal {
+  border-color: #45624e !important;
+  background: #152219 !important;
+}
+
+.wheatpaper .wpConclusion {
+  border-bottom: 0;
+  padding-bottom: 120px;
+}
+
+.wheatpaper .wpConclusion .wpSectionBody > h2 {
+  color: #eaf1eb;
+}
+
+.wheatpaper .wpSources {
+  padding: 55px 0;
+  border-top: 1px solid var(--wp-border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wheatpaper .wpSources a {
+  width: fit-content;
+  color: #93a69a;
+  font-size: 13px;
+  line-height: 1.5;
+  text-decoration: none;
+  border-bottom: 1px solid #304238;
+  padding-bottom: 3px;
+}
+
+.wheatpaper .wpSources a:hover {
+  color: var(--wp-green-bright);
+  border-color: var(--wp-green);
+}
+
+.wheatpaper ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.wheatpaper ::-webkit-scrollbar-track {
+  background: #0a0d0b;
+}
+
+.wheatpaper ::-webkit-scrollbar-thumb {
+  background: #2a3a30;
+  border-radius: 2px;
+}
+
+.wheatpaper ::-webkit-scrollbar-thumb:hover {
+  background: #3d5947;
+}
+
+@media (max-width: 900px) {
+  .wheatpaper .wpCover {
+    min-height: 620px;
+  }
+
+  .wheatpaper .wpContents {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wheatpaper .wpSection {
+    grid-template-columns: 55px minmax(0, 1fr);
+    gap: 25px;
+    padding: 75px 0;
+  }
+
+  .wheatpaper .wpGrid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wheatpaper .wpFlow {
+    grid-template-columns: 1fr;
+  }
+
+  .wheatpaper .wpFlow > b {
+    transform: rotate(90deg);
+    height: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wheatpaper .wpCover,
+  .wheatpaper .wpSection,
+  .wheatpaper .wpSources,
+  .wheatpaper .wpContents {
+    width: min(100% - 26px, 1180px);
+  }
+
+  .wheatpaper .wpCover {
+    padding: 100px 0 65px;
+  }
+
+  .wheatpaper .wpCover h1 {
+    font-size: 48px;
+  }
+
+  .wheatpaper .wpSubtitle {
+    font-size: 16px;
+  }
+
+  .wheatpaper .wpAbstract,
+  .wheatpaper .wpSectionBody > p {
+    font-size: 15px;
+  }
+
+  .wheatpaper .wpContents {
+    grid-template-columns: 1fr;
+  }
+
+  .wheatpaper .wpSection {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 60px 0;
+  }
+
+  .wheatpaper .wpSectionNumber {
+    font-size: 28px;
+  }
+
+  .wheatpaper .wpGrid2,
+  .wheatpaper .wpGrid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .wheatpaper .wpArrow {
+    display: none;
+  }
+
+  .wheatpaper .wpDiagram:not(.wpVertical) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .wheatpaper .wpTable > div {
+    grid-template-columns: 1fr;
+  }
+
+  .wheatpaper .wpTableHeader {
+    display: none !important;
+  }
+
+  .wheatpaper .wpTable > div:not(.wpTableHeader) span:first-child {
+    padding-bottom: 4px;
+  }
+
+  .wheatpaper .wpTable > div:not(.wpTableHeader) span:last-child {
+    padding-top: 4px;
+  }
+
+  .wheatpaper .wpCode {
+    padding: 18px;
+    font-size: 11px;
+  }
+
+  .wheatpaper .wpEquation {
+    padding: 17px;
+    font-size: 10px;
+  }
+}
+/* Match the main dFarmers header exactly */
+
+.topbar {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}
+
+.topbar .brand {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}
+
+.topbar .brandName,
+.topbar .brandSub,
+.topbar .mainNav,
+.topbar .mainNav a,
+.topbar .topActions,
+.topbar .network,
+.topbar .walletButton {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}

@@ -1,0 +1,676 @@
+/* =========================================================
+   dFARMERS — FARMER'S ALMANAC
+   Dark technical field-manual aesthetic
+   Charcoal + forest-green undertone
+   ========================================================= */
+
+.Almanac {
+  --almanac-bg: #0b0d0c;
+  --almanac-panel: #111513;
+  --almanac-panel-2: #151a17;
+  --almanac-border: #29332d;
+  --almanac-border-strong: #3a4a40;
+  --almanac-text: #d9ded9;
+  --almanac-muted: #89938c;
+  --almanac-green: #3f8f61;
+  --almanac-green-bright: #63b27f;
+  --almanac-green-dark: #193d29;
+  --almanac-red: #a56a5d;
+  --almanac-red-dark: #422722;
+
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(45, 91, 62, .12), transparent 34rem),
+    linear-gradient(180deg, #0a0c0b 0%, #0d100e 48%, #0a0c0b 100%);
+  color: var(--almanac-text);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================================================
+   Shared dFARMERS Header
+   Keep the Almanac body typography separate from the header.
+   ========================================================= */
+
+.Almanac .topbar,
+.Almanac .topbar .brand,
+.Almanac .topbar .brandName,
+.Almanac .topbar .brandSub,
+.Almanac .topbar .mainNav,
+.Almanac .topbar .mainNav a,
+.Almanac .topbar .topActions,
+.Almanac .topbar .network,
+.Almanac .topbar .walletButton {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}
+
+.Almanac .topbar {
+  font-size: inherit;
+}
+
+.Almanac .topbar .brand {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Almanac .topbar .mainNav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: 40px;
+  margin-right: auto;
+}
+
+.Almanac .topbar .mainNav a {
+  color: #8f9b92;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  transition: color 0.2s ease;
+}
+
+.Almanac .topbar .mainNav a:hover {
+  color: #6dbd88;
+}
+
+
+.Almanac::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+.wpCover,
+.wpSection,
+.wpSources {
+  width: min(1180px, calc(100% - 40px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wpCover {
+  min-height: 690px;
+  padding: 120px 0 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid var(--almanac-border);
+}
+
+.wpCover::before {
+  content: "dFARMERS / FIELD ARCHIVE";
+  position: absolute;
+  top: 34px;
+  left: 0;
+  color: #4b594f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+.wpKicker,
+.wpSectionLabel {
+  color: var(--almanac-green-bright);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.wpCover h1 {
+  margin: 18px 0 22px;
+  max-width: 950px;
+  color: #edf1ed;
+  font-size: clamp(54px, 8vw, 104px);
+  line-height: .9;
+  letter-spacing: -.055em;
+  font-weight: 900;
+}
+
+.wpSubtitle {
+  max-width: 880px;
+  color: #9da69f;
+  font-size: clamp(17px, 2vw, 23px);
+  line-height: 1.55;
+  letter-spacing: .01em;
+}
+
+.wpMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 38px;
+}
+
+.wpMeta span {
+  border: 1px solid var(--almanac-border);
+  background: rgba(20, 28, 23, .65);
+  color: #b2bbb4;
+  padding: 9px 13px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.wpRule {
+  width: 100%;
+  height: 1px;
+  margin: 35px 0 28px;
+  background: linear-gradient(90deg, var(--almanac-green), transparent);
+}
+
+.wpAbstract {
+  max-width: 920px;
+  margin: 0;
+  color: #b8c0ba;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.wpContents {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  border-bottom: 1px solid var(--almanac-border);
+}
+
+.wpContents > span {
+  grid-column: 1 / -1;
+  margin-bottom: 8px;
+  color: var(--almanac-green-bright);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.wpContents a {
+  color: #89948c;
+  text-decoration: none;
+  border: 1px solid #202821;
+  background: #0f1311;
+  padding: 13px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  transition: .2s ease;
+}
+
+.wpContents a:hover {
+  color: #dce5de;
+  border-color: #3b5946;
+  background: #141c17;
+  transform: translateY(-1px);
+}
+
+.wpSection {
+  padding: 105px 0;
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 45px;
+  border-bottom: 1px solid var(--almanac-border);
+}
+
+.wpSectionNumber {
+  color: #405047;
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  padding-top: 5px;
+}
+
+.wpSectionBody {
+  min-width: 0;
+}
+
+.wpSectionBody > h2 {
+  max-width: 950px;
+  margin: 13px 0 28px;
+  color: #e7ebe7;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1;
+  letter-spacing: -.035em;
+  font-weight: 900;
+}
+
+.wpSectionBody > p {
+  max-width: 900px;
+  margin: 0 0 24px;
+  color: #aeb7b0;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.wpEquation {
+  margin: 38px 0 0;
+  padding: 21px 24px;
+  border: 1px solid #304438;
+  border-left: 3px solid var(--almanac-green);
+  background: linear-gradient(90deg, rgba(34, 66, 46, .28), rgba(14, 19, 16, .8));
+  color: #b9d2c0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: .07em;
+  overflow-x: auto;
+}
+
+.wpDiagram {
+  margin: 42px 0 10px;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.wpNode {
+  min-width: 150px;
+  flex: 1;
+  min-height: 125px;
+  padding: 20px;
+  border: 1px solid var(--almanac-border-strong);
+  background:
+    linear-gradient(145deg, rgba(36, 54, 43, .45), rgba(15, 19, 17, .98));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.wpNode::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(88, 119, 99, .08);
+  pointer-events: none;
+}
+
+.wpNodeRed {
+  border-color: #5a3934;
+  background: linear-gradient(145deg, rgba(73, 43, 38, .34), rgba(15, 19, 17, .98));
+}
+
+.wpNode small,
+.wpMiniCard small {
+  color: #68766d;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.wpNode strong {
+  margin: 12px 0 7px;
+  color: #dce5de;
+  font-size: 15px;
+  letter-spacing: .03em;
+}
+
+.wpNode span {
+  color: #78857c;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: .08em;
+}
+
+.wpArrow,
+.wpDown {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--almanac-green);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.wpVertical {
+  flex-direction: column;
+  align-items: center;
+}
+
+.wpVertical .wpNode {
+  width: min(520px, 100%);
+}
+
+.wpDown {
+  height: 24px;
+}
+
+.wpGrid2,
+.wpGrid3 {
+  display: grid;
+  gap: 12px;
+  margin: 40px 0;
+}
+
+.wpGrid2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wpGrid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.wpMiniCard {
+  min-height: 150px;
+  padding: 24px;
+  border: 1px solid var(--almanac-border);
+  background: linear-gradient(145deg, #141916, #0e1210);
+  position: relative;
+}
+
+.wpMiniCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 2px;
+  background: var(--almanac-green);
+}
+
+.wpMiniCard strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #dce3dd;
+  font-size: 14px;
+  letter-spacing: .04em;
+}
+
+.wpMiniCard > span {
+  display: block;
+  margin-bottom: 15px;
+  color: #66806e;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.wpMiniCard p {
+  margin: 0;
+  color: #8f9a92;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.wpCode {
+  margin: 38px 0;
+  padding: 27px;
+  border: 1px solid #27342c;
+  background: #080a09;
+  color: #9eb3a4;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  line-height: 1.85;
+  white-space: pre;
+  overflow-x: auto;
+  box-shadow: inset 0 0 40px rgba(28, 61, 41, .08);
+}
+
+.wpTable {
+  margin: 40px 0;
+  border: 1px solid var(--almanac-border);
+  background: #0d110f;
+  overflow: hidden;
+}
+
+.wpTable > div {
+  display: grid;
+  grid-template-columns: minmax(160px, .7fr) minmax(0, 1.5fr);
+  border-top: 1px solid #202821;
+}
+
+.wpTable > div:first-child {
+  border-top: 0;
+}
+
+.wpTableHeader {
+  background: #18211b;
+}
+
+.wpTable span {
+  padding: 15px 18px;
+  color: #9ba59d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.wpTable > div:not(.wpTableHeader) span:first-child {
+  color: #cbd5ce;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.wpTableHeader span {
+  color: var(--almanac-green-bright);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .13em;
+}
+
+.wpFlow {
+  margin: 42px 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.wpFlow > div {
+  min-width: 145px;
+  min-height: 105px;
+  padding: 20px;
+  border: 1px solid var(--almanac-border);
+  background: #111613;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wpFlow strong {
+  color: #dbe3dd;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.wpFlow span {
+  color: #718077;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: .08em;
+}
+
+.wpFlow b {
+  color: var(--almanac-green);
+  font-size: 19px;
+}
+
+.wpFlowFinal {
+  border-color: #45624e !important;
+  background: #152219 !important;
+}
+
+.wpConclusion {
+  border-bottom: 0;
+  padding-bottom: 120px;
+}
+
+.wpConclusion .wpSectionBody > h2 {
+  color: #eaf1eb;
+}
+
+.wpSources {
+  padding: 55px 0;
+  border-top: 1px solid var(--almanac-border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wpSources a {
+  width: fit-content;
+  color: #93a69a;
+  font-size: 13px;
+  line-height: 1.5;
+  text-decoration: none;
+  border-bottom: 1px solid #304238;
+  padding-bottom: 3px;
+}
+
+.wpSources a:hover {
+  color: var(--almanac-green-bright);
+  border-color: var(--almanac-green);
+}
+
+/* Scrollbars */
+.Almanac ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.Almanac ::-webkit-scrollbar-track {
+  background: #0a0d0b;
+}
+
+.Almanac ::-webkit-scrollbar-thumb {
+  background: #2a3a30;
+  border-radius: 2px;
+}
+
+.Almanac ::-webkit-scrollbar-thumb:hover {
+  background: #3d5947;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .wpCover {
+    min-height: 620px;
+  }
+
+  .wpContents {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wpSection {
+    grid-template-columns: 55px minmax(0, 1fr);
+    gap: 25px;
+    padding: 75px 0;
+  }
+
+  .wpGrid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wpFlow {
+    grid-template-columns: 1fr;
+  }
+
+  .wpFlow > b {
+    transform: rotate(90deg);
+    height: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wpCover,
+  .wpSection,
+  .wpSources,
+  .wpContents {
+    width: min(100% - 26px, 1180px);
+  }
+
+  .wpCover {
+    padding: 100px 0 65px;
+  }
+
+  .wpCover h1 {
+    font-size: 48px;
+  }
+
+  .wpSubtitle {
+    font-size: 16px;
+  }
+
+  .wpAbstract,
+  .wpSectionBody > p {
+    font-size: 15px;
+  }
+
+  .wpContents {
+    grid-template-columns: 1fr;
+  }
+
+  .wpSection {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 60px 0;
+  }
+
+  .wpSectionNumber {
+    font-size: 28px;
+  }
+
+  .wpGrid2,
+  .wpGrid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .wpDiagram {
+    align-items: stretch;
+  }
+
+  .wpArrow {
+    display: none;
+  }
+
+  .wpDiagram:not(.wpVertical) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .wpTable > div {
+    grid-template-columns: 1fr;
+  }
+
+  .wpTableHeader {
+    display: none !important;
+  }
+
+  .wpTable > div:not(.wpTableHeader) span:first-child {
+    padding-bottom: 4px;
+  }
+
+  .wpTable > div:not(.wpTableHeader) span:last-child {
+    padding-top: 4px;
+  }
+
+  .wpCode {
+    padding: 18px;
+    font-size: 11px;
+  }
+
+  .wpEquation {
+    padding: 17px;
+    font-size: 10px;
+  }
+}
+
