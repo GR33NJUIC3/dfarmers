@@ -238,7 +238,7 @@ export default function Home() {
         <div className="featuredPanel">
           <div className="featuredHeader">
             <div>
-              <span>TRADING PERSONALITIES DICTATE FARMER STATIC ASSET UNIVERSE. TRADING STRATEGIES DEFINE FARMER OPERATIONS</span>
+              <span>TRADING PERSONALITIES DICTATE FARMER STATIC ASSET UNIVERSE.</span>
             </div>
 
           </div>
