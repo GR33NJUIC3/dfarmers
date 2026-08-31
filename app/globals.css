@@ -3175,3 +3175,8 @@
 .strategyDeskKicker {
   color: #78a982 !important;
 }
+@media (max-width: 600px) {
+  .shellTop {
+    padding-bottom: 42px !important;
+  }
+}

@@ -222,7 +222,7 @@ export default function Home() {
       <section className="shell">
         <div className="shellTop">
           <div className="titleBlock">
-            <span className="eyebrow">ENGAGE DERP. GENERATE YOUR FARMER. YOUR FARMER AUTONOMOUSLY EXECUTES.</span>
+            <span className="eyebrow">ENGAGE DERP. GENERATE dFARMER. dFARMER AUTONOMOUSLY EXECUTES.</span>
             <div className="titleLine">
             </div>
           </div>
