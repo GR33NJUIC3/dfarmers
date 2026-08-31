@@ -58,7 +58,6 @@ const assetUniverse: Asset[] = [
 
 const traits = ["●", "◉", "●", "a", "✕", "◈", "K", "K", "◉"];
 
-const strategyImage = "/farmers/farmer-01.png";
 
 const strategies = [
   { id: 1, name: "Accumulator", description: "Continuously deploys available capital across eligible assets, keeping incoming funds working instead of waiting for a scheduled allocation window.", profile: "CORE", behavior: "ALLOCATE", risk: "LOW" },
@@ -222,7 +221,7 @@ export default function Home() {
       <section className="shell">
         <div className="shellTop">
           <div className="titleBlock">
-            <span className="eyebrow">ENGAGE DERP. GENERATE YOUR FARMER. YOUR FARMER TRADES AUTONOMOUSLY.</span>
+            <span className="eyebrow">ENGAGE DERP. GENERATE YOUR FARMER. YOUR FARMER AUTONOMOUSLY EXECUTES.</span>
             <div className="titleLine">
             </div>
           </div>
@@ -252,7 +251,7 @@ export default function Home() {
         <div className="featuredPanel">
           <div className="featuredHeader">
             <div>
-              <span>FARMER PERSONALITIES DEFINE A STATIC ASSET UNIVERSE. MINT ETH IS DISTRIBUTED ACCORDING TO THE dFARMER STRATEGY.</span>
+              <span>FARMER PERSONALITIES DEFINE THEIR STATIC ASSET UNIVERSE. MINT ETH IS DISTRIBUTED ACCORDING TO THE dFARMER STRATEGY.</span>
             </div>
 
           </div>
@@ -340,7 +339,7 @@ Your dFarmer starts with an autonomous strategy at mint, defining how it interac
   </span>
   <p>
     {riskFilter === "ALL"
-      ? "Browse the complete strategy universe. Select a risk profile to narrow the desk to strategies classified by operating behavior."
+      ? "Browse the complete strategy universe. "
       : riskFilter === "LOW"
         ? "Low risk emphasizes diversification, controlled allocation, and reduced concentration. These strategies generally prioritize consistency over aggressive positioning."
         : riskFilter === "MED"
@@ -542,7 +541,7 @@ function StrategyRow({
 
       <div className="strategyAvatar">
         <img
-          src={strategyImage}
+          src={`/farmers/farmer-${String(((rank - 1) % 8) + 1).padStart(2, "0")}.png`}
           alt=""
           aria-hidden="true"
         />

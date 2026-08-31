@@ -1808,3 +1808,122 @@
   margin: 10px auto 0;
   text-align: left;
 }
+/* =========================================================
+   MOBILE FARMER / STRATEGY DESK CLEANUP
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* -----------------------------------------
+     1. REMOVE DEAD SPACE BELOW FARMERS
+     ----------------------------------------- */
+
+  .featuredPanel {
+    padding-bottom: 8px !important;
+    margin-bottom: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .featuredGrid {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+
+  /* -----------------------------------------
+     2. KEEP ALL STRATEGY FILTERS ON ONE ROW
+     ----------------------------------------- */
+
+  .strategyDeskToolbar {
+    padding: 10px 10px !important;
+    overflow: hidden;
+  }
+
+  .strategyDeskFilters {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 2px !important;
+  }
+
+  .strategyDeskFilters .tab {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    padding: 7px 3px !important;
+    margin: 0 !important;
+    font-size: 8px !important;
+    letter-spacing: .04em !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  .strategyDeskFilters .tab small {
+    font-size: 6px !important;
+    margin-left: 2px !important;
+  }
+
+  .strategyDeskFilters .riskTab {
+    border-left: 0 !important;
+    padding-left: 3px !important;
+    margin-left: 0 !important;
+  }
+
+
+  /* -----------------------------------------
+     Return of the Mac
+     ----------------------------------------- */
+
+  .strategyDeskTop {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .strategyDeskHeading {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    padding: 0 16px !important;
+  }
+
+  .strategyDeskHeading p {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+}
+@media (max-width: 600px) {
+  .infoBar {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    width: calc(100% - 16px) !important;
+    margin: 0 auto !important;
+  }
+
+  .infoBar > div {
+    min-width: 0 !important;
+    padding: 10px 6px !important;
+  }
+
+  .infoBar span,
+  .infoBar strong {
+    min-width: 0 !important;
+    white-space: nowrap !important;
+  }
+}
+.strategyRiskExplanation {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 6px !important;
+}
+
+.strategyRiskExplanation p {
+  margin: 0 !important;
+  text-align: center !important;
+}
