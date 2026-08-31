@@ -1927,3 +1927,23 @@
   margin: 0 !important;
   text-align: center !important;
 }
+@media (max-width: 600px) {
+  .strategyDeskPage {
+    display: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .featuredPanel {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .featuredGrid {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
