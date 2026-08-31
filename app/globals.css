@@ -1952,3 +1952,64 @@
     display: none !important;
   }
 }
+/* =========================================================
+   MOBILE LAYOUT CLEANUP
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* -----------------------------------------
+     1. ADD CLEAR SEPARATION ABOVE INFO BAR
+     ----------------------------------------- */
+
+  .infoBar {
+    margin-top: 10px !important;
+  }
+
+
+  /* -----------------------------------------
+     2. KEEP ALL 4 ASSET ICONS INSIDE
+        EACH PERSONALITY CARD
+     ----------------------------------------- */
+
+  .featuredAssets {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 3px !important;
+    width: 100% !important;
+    padding: 0 4px !important;
+    box-sizing: border-box !important;
+  }
+
+  .featuredAsset {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 22px !important;
+    height: 22px !important;
+    box-sizing: border-box !important;
+  }
+
+  .featuredAsset img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+
+
+  /* -----------------------------------------
+     3. GIVE STRATEGY DESK HEADER MORE
+        BREATHING ROOM AT THE TOP
+     ----------------------------------------- */
+
+  .strategyDeskTop {
+    padding-top: 18px !important;
+  }
+
+  .strategyDeskHeading {
+    padding-top: 4px !important;
+  }
+}
