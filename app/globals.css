@@ -1947,3 +1947,8 @@
     margin-bottom: 0 !important;
   }
 }
+@media (max-width: 700px) {
+  .futurePanel {
+    display: none !important;
+  }
+}
