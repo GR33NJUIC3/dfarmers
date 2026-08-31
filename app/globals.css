@@ -2013,3 +2013,1165 @@
     padding-top: 4px !important;
   }
 }
+/* =========================================================
+   dFARMERS LEGAL PAGES
+   ========================================================= */
+
+.legalPage {
+  width: min(1100px, calc(100% - 40px));
+  margin: 40px auto 80px;
+  color: #aeb8ad;
+  font-family: inherit;
+}
+
+.legalHero {
+  padding: 45px 50px 40px;
+  border: 1px solid rgba(120, 150, 125, 0.22);
+  background: rgba(15, 22, 17, 0.72);
+}
+
+.legalHero > span {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: #6f8975;
+  text-transform: uppercase;
+}
+
+.legalHero h1 {
+  margin: 0 0 20px;
+  color: #d7ddd6;
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.legalHero p {
+  max-width: 780px;
+  margin: 0;
+  color: #718074;
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+.legalContent {
+  border-left: 1px solid rgba(120, 150, 125, 0.18);
+  border-right: 1px solid rgba(120, 150, 125, 0.18);
+  background: rgba(10, 15, 12, 0.5);
+}
+
+.legalNotice {
+  margin: 0;
+  padding: 28px 50px;
+  border-bottom: 1px solid rgba(120, 150, 125, 0.18);
+  background: rgba(20, 30, 23, 0.45);
+}
+
+.legalNotice strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #83a68a;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.legalNotice p {
+  max-width: 900px;
+  margin: 0;
+  color: #7f8d82;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.legalSection {
+  position: relative;
+  padding: 34px 50px 38px;
+  border-bottom: 1px solid rgba(120, 150, 125, 0.14);
+}
+
+.legalSection > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #526257;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+}
+
+.legalSection h2 {
+  margin: 0 0 16px;
+  color: #b8c4b9;
+  font-size: 15px;
+  line-height: 1.3;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.legalSection p {
+  max-width: 900px;
+  margin: 0 0 14px;
+  color: #718074;
+  font-size: 11px;
+  line-height: 1.9;
+  letter-spacing: 0.025em;
+}
+
+.legalSection p:last-child {
+  margin-bottom: 0;
+}
+
+.legalFinal {
+  padding: 35px 50px 40px;
+  text-align: center;
+  background: rgba(17, 25, 19, 0.6);
+}
+
+.legalFinal > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #647668;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.legalFinal strong {
+  display: block;
+  margin-bottom: 16px;
+  color: #9aae9d;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+
+.legalFinal p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #69786d;
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .legalPage {
+    width: calc(100% - 24px);
+    margin: 24px auto 50px;
+  }
+
+  .legalHero {
+    padding: 30px 22px 28px;
+  }
+
+  .legalHero h1 {
+    font-size: 28px;
+  }
+
+  .legalHero p {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  .legalNotice {
+    padding: 22px;
+  }
+
+  .legalNotice p {
+    font-size: 10px;
+    line-height: 1.75;
+  }
+
+  .legalSection {
+    padding: 26px 22px 30px;
+  }
+
+  .legalSection h2 {
+    font-size: 13px;
+  }
+
+  .legalSection p {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .legalFinal {
+    padding: 28px 22px 32px;
+  }
+}
+/* =========================================================
+   dFARMERS LEADERBOARD
+   ========================================================= */
+
+.leaderboardApp {
+  min-height: 100vh;
+}
+
+.leaderboardPage {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 52px 0 90px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.leaderboardHero {
+  position: relative;
+  padding: 42px 46px 44px;
+  border: 1px solid rgba(120, 150, 125, 0.2);
+  background: rgba(12, 18, 14, 0.72);
+  overflow: hidden;
+}
+
+.leaderboardHero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(120, 150, 125, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(120, 150, 125, 0.04) 1px,
+      transparent 1px
+    );
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.leaderboardHeroEyebrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: #647468;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.liveDot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7caa84;
+  box-shadow: 0 0 8px rgba(124, 170, 132, 0.55);
+}
+
+.leaderboardHeroGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  gap: 55px;
+  align-items: end;
+}
+
+.leaderboardHero h1 {
+  margin: 0;
+  color: #d8dfd8;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 0.92;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.leaderboardHero h1 span {
+  display: block;
+  color: #819584;
+}
+
+.leaderboardHero p {
+  max-width: 650px;
+  margin: 25px 0 0;
+  color: #718075;
+  font-size: 11px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+}
+
+/* =========================================================
+   NETWORK STATS
+   ========================================================= */
+
+.networkStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  border: 1px solid rgba(120, 150, 125, 0.15);
+  background: rgba(120, 150, 125, 0.1);
+}
+
+.networkStat {
+  min-height: 105px;
+  padding: 17px;
+  background: rgba(14, 21, 16, 0.9);
+}
+
+.networkStat span {
+  display: block;
+  color: #56665a;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.networkStat strong {
+  display: block;
+  margin-top: 9px;
+  color: #b9c6ba;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+}
+
+.networkStat small {
+  display: block;
+  margin-top: 6px;
+  color: #5d6e61;
+  font-size: 7px;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+.leaderboardControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid rgba(120, 150, 125, 0.16);
+  background: rgba(11, 17, 13, 0.75);
+}
+
+.leaderboardTabs,
+.leaderboardPeriod {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.leaderboardTabs button,
+.leaderboardPeriod button {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #657367;
+  padding: 11px 15px;
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.leaderboardTabs button:hover,
+.leaderboardPeriod button:hover {
+  color: #a8b6aa;
+}
+
+.leaderboardTabs button.active,
+.leaderboardPeriod button.active {
+  color: #c1cdc2;
+  border-color: rgba(120, 150, 125, 0.25);
+  background: rgba(80, 105, 86, 0.14);
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.leaderboardContent {
+  margin-top: 20px;
+}
+
+.leaderboardSectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 18px;
+}
+
+.leaderboardSectionHead small {
+  display: block;
+  margin-bottom: 8px;
+  color: #56665a;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+}
+
+.leaderboardSectionHead h2 {
+  margin: 0;
+  color: #b7c3b8;
+  font-size: 25px;
+  letter-spacing: 0.08em;
+}
+
+.leaderboardSectionHead h2 span {
+  color: #738578;
+}
+
+.leaderboardTools {
+  display: flex;
+  gap: 8px;
+}
+
+.leaderboardTools input,
+.leaderboardTools select {
+  height: 36px;
+  border: 1px solid rgba(120, 150, 125, 0.18);
+  background: rgba(12, 18, 14, 0.9);
+  color: #89988c;
+  padding: 0 12px;
+  outline: none;
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.leaderboardTools input {
+  width: 190px;
+}
+
+.leaderboardTools input::placeholder {
+  color: #4e5d52;
+}
+
+.leaderboardTools input:focus,
+.leaderboardTools select:focus {
+  border-color: rgba(120, 150, 125, 0.4);
+}
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+
+.leaderboardMetrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-bottom: 20px;
+  background: rgba(120, 150, 125, 0.1);
+  border: 1px solid rgba(120, 150, 125, 0.1);
+}
+
+.leaderboardMetrics > div {
+  padding: 17px;
+  background: rgba(13, 19, 15, 0.82);
+}
+
+.leaderboardMetrics span {
+  display: block;
+  color: #526156;
+  font-size: 7px;
+  letter-spacing: 0.16em;
+}
+
+.leaderboardMetrics strong {
+  display: block;
+  margin-top: 8px;
+  color: #aebaae;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+}
+
+.leaderboardMetrics small {
+  display: block;
+  margin-top: 5px;
+  color: #58685c;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================
+   PODIUM
+   ========================================================= */
+
+.podium {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.podiumCard {
+  position: relative;
+  min-height: 225px;
+  padding: 24px;
+  border: 1px solid rgba(120, 150, 125, 0.18);
+  background: rgba(14, 21, 16, 0.82);
+  overflow: hidden;
+}
+
+.podiumCard::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -60px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(120, 150, 125, 0.08);
+  border-radius: 50%;
+}
+
+.podiumCard small {
+  color: #56665a;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+}
+
+.podiumGlyph {
+  margin-top: 18px;
+  color: rgba(110, 137, 115, 0.18);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 0.8;
+}
+
+.podiumFarmer {
+  margin-top: 12px;
+  color: #aebaae;
+  font-size: 19px;
+  letter-spacing: 0.08em;
+}
+
+.podiumPersonality {
+  margin-top: 6px;
+  color: #657568;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+}
+
+.podiumCard strong {
+  display: block;
+  margin-top: 22px;
+  color: #c3cec4;
+  font-size: 25px;
+  letter-spacing: 0.04em;
+}
+
+.podiumCard > span {
+  display: block;
+  margin-top: 4px;
+  color: #526156;
+  font-size: 7px;
+  letter-spacing: 0.15em;
+}
+
+.podiumCard em {
+  display: block;
+  margin-top: 13px;
+  color: #78977e;
+  font-size: 8px;
+  font-style: normal;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   FARMER TABLE
+   ========================================================= */
+
+.leaderboardTable {
+  border: 1px solid rgba(120, 150, 125, 0.16);
+  background: rgba(8, 13, 10, 0.65);
+  overflow-x: auto;
+}
+
+.tableHeader,
+.leaderboardRow {
+  display: grid;
+  grid-template-columns:
+    55px
+    75px
+    100px
+    110px
+    110px
+    80px
+    105px
+    75px
+    125px;
+  min-width: 900px;
+}
+
+.tableHeader {
+  border-bottom: 1px solid rgba(120, 150, 125, 0.14);
+  background: rgba(22, 30, 24, 0.7);
+}
+
+.tableHeader span {
+  padding: 12px 10px;
+  color: #4f5f53;
+  font-size: 7px;
+  letter-spacing: 0.13em;
+}
+
+.leaderboardRow {
+  border-bottom: 1px solid rgba(120, 150, 125, 0.09);
+  transition: background 0.2s ease;
+}
+
+.leaderboardRow:last-child {
+  border-bottom: 0;
+}
+
+.leaderboardRow:hover {
+  background: rgba(70, 95, 76, 0.08);
+}
+
+.leaderboardRow > span,
+.leaderboardRow > strong {
+  display: flex;
+  align-items: center;
+  min-height: 55px;
+  padding: 10px;
+  color: #77857a;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.leaderboardRow > strong {
+  color: #aab6ab;
+  font-weight: 600;
+}
+
+.leaderboardRow .rank {
+  color: #536257;
+}
+
+.leaderboardRow .strategy {
+  color: #839989;
+}
+
+.leaderboardRow .asset {
+  color: #9baa9d;
+}
+
+.leaderboardRow .value {
+  color: #b9c5ba;
+}
+
+.leaderboardRow .pnl {
+  color: #789a7f;
+}
+
+.farmerStatus {
+  gap: 6px;
+  white-space: nowrap;
+  color: #708073 !important;
+}
+
+.farmerStatus i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #748b79;
+}
+
+.farmerStatus.rebalancing i {
+  background: #9a936c;
+}
+
+.farmerStatus.harvesting i {
+  background: #819c84;
+}
+
+/* =========================================================
+   SECONDARY VIEWS
+   ========================================================= */
+
+.leaderboardViewPanel {
+  border: 1px solid rgba(120, 150, 125, 0.16);
+  background: rgba(10, 16, 12, 0.62);
+  padding: 28px;
+}
+
+.viewTotal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.viewTotal strong {
+  color: #b5c1b6;
+  font-size: 27px;
+}
+
+.viewTotal span {
+  margin-top: 4px;
+  color: #526156;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.distributionGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.distributionCard {
+  min-height: 145px;
+  padding: 20px;
+  border: 1px solid rgba(120, 150, 125, 0.13);
+  background: rgba(16, 23, 18, 0.75);
+}
+
+.distributionCard small {
+  display: block;
+  color: #526156;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+.distributionCard strong {
+  display: block;
+  margin-top: 18px;
+  color: #aebbaf;
+  font-size: 23px;
+  letter-spacing: 0.06em;
+}
+
+.distributionCard span {
+  display: block;
+  margin-top: 4px;
+  color: #718074;
+  font-size: 10px;
+}
+
+.distributionCard em {
+  display: block;
+  margin-top: 10px;
+  color: #627166;
+  font-size: 9px;
+  font-style: normal;
+  letter-spacing: 0.1em;
+}
+
+.distributionBar {
+  height: 3px;
+  margin-top: 18px;
+  background: rgba(120, 150, 125, 0.1);
+}
+
+.distributionBar i {
+  display: block;
+  height: 100%;
+  background: #708b75;
+}
+
+.assetTable {
+  border: 1px solid rgba(120, 150, 125, 0.13);
+  overflow-x: auto;
+}
+
+.assetTableHeader,
+.assetTableRow {
+  display: grid;
+  grid-template-columns: 70px 1.2fr 110px 1.3fr 130px 100px;
+  min-width: 650px;
+}
+
+.assetTableHeader {
+  background: rgba(22, 30, 24, 0.7);
+  border-bottom: 1px solid rgba(120, 150, 125, 0.13);
+}
+
+.assetTableHeader span {
+  padding: 12px;
+  color: #4f5f53;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+}
+
+.assetTableRow {
+  border-bottom: 1px solid rgba(120, 150, 125, 0.08);
+}
+
+.assetTableRow:last-child {
+  border-bottom: 0;
+}
+
+.assetTableRow > span,
+.assetTableRow > strong {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 10px 12px;
+  color: #77857a;
+  font-size: 12px;
+}
+
+.assetTableRow > strong {
+  color: #aab6ab;
+}
+
+.assetTableRow .value,
+.assetTableRow .pnl {
+  color: #789a7f;
+}
+
+/* =========================================================
+   STRATEGY VIEW
+   ========================================================= */
+
+.strategyExplain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.strategyExplain > div {
+  padding: 18px;
+  border: 1px solid rgba(120, 150, 125, 0.12);
+  background: rgba(16, 23, 18, 0.7);
+}
+
+.strategyExplain span {
+  color: #4f5f53;
+  font-size: 10px;
+}
+
+.strategyExplain strong {
+  display: block;
+  margin-top: 13px;
+  color: #a9b6aa;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.strategyExplain p {
+  margin: 9px 0 0;
+  color: #68766b;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.riskBadge {
+  justify-content: center;
+  max-width: 55px;
+  min-height: 22px !important;
+  margin: auto 0;
+  border: 1px solid rgba(120, 150, 125, 0.15);
+  font-size: 7px !important;
+  letter-spacing: 0.12em;
+}
+
+.riskBadge.low {
+  color: #78927d !important;
+}
+
+.riskBadge.med {
+  color: #9a936c !important;
+}
+
+.riskBadge.high {
+  color: #9c7771 !important;
+}
+
+/* =========================================================
+   PERSONALITY VIEW
+   ========================================================= */
+
+.personalityGrid {
+  display: grid;
+  gap: 8px;
+}
+
+.personalityRankCard {
+  display: grid;
+  grid-template-columns: 55px 1fr 230px;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid rgba(120, 150, 125, 0.12);
+  background: rgba(16, 23, 18, 0.7);
+}
+
+.personalityRank {
+  color: #56665a;
+  font-size: 16px;
+}
+
+.personalityRankCard small {
+  display: block;
+  color: #526156;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.personalityRankCard strong {
+  display: block;
+  margin-top: 7px;
+  color: #aab6ab;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.personalityRankCard p {
+  max-width: 600px;
+  margin: 7px 0 0;
+  color: #68766b;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.personalityNumbers {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.personalityNumbers span {
+  color: #56665a;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.personalityNumbers b {
+  display: block;
+  margin-bottom: 5px;
+  color: #aab6ab;
+  font-size: 14px;
+}
+
+/* =========================================================
+   FOOTER NOTE
+   ========================================================= */
+
+.leaderboardFooterNote {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 20px;
+  padding: 18px 20px;
+  border: 1px solid rgba(120, 150, 125, 0.12);
+  background: rgba(12, 18, 14, 0.55);
+}
+
+.leaderboardFooterNote > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: #607064;
+  font-size: 7px;
+  letter-spacing: 0.16em;
+}
+
+.leaderboardFooterNote p {
+  max-width: 750px;
+  margin: 0;
+  color: #58665b;
+  font-size: 8px;
+  line-height: 1.7;
+  text-align: right;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .leaderboardPage {
+    width: calc(100% - 20px);
+    padding: 28px 0 55px;
+  }
+
+  .leaderboardHero {
+    padding: 28px 20px 30px;
+  }
+
+  .leaderboardHeroGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .leaderboardHero h1 {
+    font-size: 38px;
+  }
+
+  .leaderboardHero p {
+    font-size: 9px;
+    line-height: 1.75;
+  }
+
+  .networkStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .networkStat {
+    min-height: 85px;
+    padding: 13px;
+  }
+
+  .networkStat strong {
+    font-size: 17px;
+  }
+
+  .leaderboardControls {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 7px;
+  }
+
+  .leaderboardTabs {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .leaderboardTabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .leaderboardTabs button {
+    flex: 1 0 auto;
+    padding: 10px 11px;
+    font-size: 9px;
+  }
+
+  .leaderboardPeriod {
+    justify-content: center;
+  }
+
+  .leaderboardSectionHead {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .leaderboardTools {
+    width: 100%;
+  }
+
+  .leaderboardTools input {
+    width: 100%;
+    flex: 1;
+  }
+
+  .leaderboardTools select {
+    width: 105px;
+  }
+
+  .leaderboardMetrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .leaderboardMetrics > div {
+    padding: 13px;
+  }
+
+  .leaderboardMetrics strong {
+    font-size: 13px;
+  }
+
+  .podium {
+    grid-template-columns: 1fr;
+  }
+
+  .podiumCard {
+    min-height: 190px;
+  }
+
+  .podiumCard strong {
+    margin-top: 15px;
+    font-size: 21px;
+  }
+
+  .leaderboardTable {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .leaderboardViewPanel {
+    padding: 18px 12px;
+  }
+
+  .distributionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .strategyExplain {
+    grid-template-columns: 1fr;
+  }
+
+  .personalityRankCard {
+    grid-template-columns: 35px 1fr;
+    gap: 12px;
+  }
+
+  .personalityNumbers {
+    grid-column: 2;
+    justify-content: flex-start;
+    gap: 25px;
+  }
+
+  .leaderboardFooterNote {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .leaderboardFooterNote p {
+    text-align: left;
+  }
+}
+/* =========================================================
+   MOBILE INFO BAR — FINAL OVERRIDE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* Create clear separation from the tagline */
+  .infoBar {
+    margin-top: 16px !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+    width: calc(100% - 16px) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Keep all four fields equal */
+  .infoBar > div {
+    min-width: 0 !important;
+    padding: 10px 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Restore the three vertical dividers */
+  .infoBar > div:not(:last-child) {
+    border-right: 1px solid #252925 !important;
+  }
+
+  /* Make sure the final column has no divider */
+  .infoBar > div:last-child {
+    border-right: 0 !important;
+  }
+
+  /* Keep the contents inside their columns */
+  .infoBar span,
+  .infoBar strong {
+    min-width: 0 !important;
+    white-space: nowrap !important;
+  }
+}
+.strategyDeskKicker {
+  color: #78a982 !important;
+}

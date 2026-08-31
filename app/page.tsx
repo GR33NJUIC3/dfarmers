@@ -176,6 +176,7 @@ export default function Home() {
 
         <nav className="mainNav">
           <a href="/almanac">ALMANAC</a>
+          <a href="/leaderboard">LEADERBOARD</a>
           <a href="/wheatpaper">WHEATPAPER</a>
         </nav>
 
