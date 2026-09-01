@@ -180,13 +180,46 @@ export default function Home() {
           <a href="/wheatpaper">WHEATPAPER</a>
         </nav>
 
-        <div className="topActions">
-          <span className="network">
-            <i />
-            BASE
-          </span>
-          <button className="walletButton">CONNECT WALLET</button>
-        </div>
+<div className="topActions">
+  <span className="network">
+    <i />
+    BASE
+  </span>
+
+  <button className="walletButton">CONNECT WALLET</button>
+
+<div className="mobileSocials">
+  <a href="YOUR_DISCORD_LINK" target="_blank" rel="noopener noreferrer">
+    <img src="/social/discord.svg" alt="Discord" />
+  </a>
+
+  <a href="https://x.com/dFarmersNFT" target="_blank" rel="noopener noreferrer">
+    <img src="/social/x.svg" alt="X" />
+  </a>
+</div>
+</div>
+        <button
+  type="button"
+  className="mobileMenuButton"
+  aria-label="Open navigation menu"
+  onClick={() => {
+    document.body.classList.toggle("mobileMenuOpen");
+  }}
+>
+  <span />
+  <span />
+  <span />
+</button>
+
+<nav className="mobileMenu">
+  <a href="/almanac">ALMANAC</a>
+  <a href="/leaderboard">LEADERBOARD</a>
+  <a href="/wheatpaper">WHEATPAPER</a>
+
+  <button className="mobileWalletButton">
+    CONNECT WALLET
+  </button>
+</nav>
       </header>
 
       <section className="assetBanner" aria-label="Asset Universe">

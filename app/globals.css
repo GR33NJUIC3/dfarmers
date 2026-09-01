@@ -3180,3 +3180,168 @@
     padding-bottom: 42px !important;
   }
 }
+/* =========================================================
+   MOBILE NAV MENU
+   ========================================================= */
+
+.mobileMenuButton,
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+
+  .mobileMenuButton {
+    display: flex;
+    width: 38px;
+    height: 34px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    border: 1px solid #303530;
+    border-radius: 5px;
+    background: #151815;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .mobileMenuButton span {
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: #8f9b92;
+  }
+
+  .mobileMenu {
+    display: none;
+    position: absolute;
+    top: 58px;
+    right: 12px;
+    width: 180px;
+    padding: 5px;
+    border: 1px solid #303530;
+    border-radius: 6px;
+    background: #121412;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+    z-index: 9999;
+  }
+
+  body.mobileMenuOpen .mobileMenu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.mobileMenuOpen .mobileMenuButton {
+    border-color: #487e54;
+  }
+
+  .mobileMenu a {
+    display: block;
+    padding: 13px 12px;
+    color: #8f9b92;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    border-bottom: 1px solid #252925;
+  }
+
+  .mobileMenu a:last-child {
+    border-bottom: 0;
+  }
+
+  .mobileMenu a:active {
+    color: #72a97b;
+    background: #182019;
+  }
+
+  /* Existing desktop navigation disappears on mobile */
+  .mainNav {
+    display: none !important;
+  }
+}
+@media (max-width: 700px) {
+  .mobileSocials {
+    display: flex;
+    gap: 6px;
+  }
+
+  .mobileSocials a {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #303530;
+    border-radius: 5px;
+    background: #151815;
+    color: #8f9b92;
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: 700;
+  }
+
+  /* Hide the original wallet button on mobile */
+  .topActions .walletButton {
+    display: none;
+  }
+
+  /* Keep BASE hidden on mobile */
+  .topActions .network {
+    display: none;
+  }
+
+  /* Wallet button inside mobile menu */
+  .mobileWalletButton {
+    width: 100%;
+    margin-top: 5px;
+    padding: 13px 12px;
+    border: 0;
+    border-top: 1px solid #303530;
+    background: transparent;
+    color: #8f9b92;
+    font: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .mobileWalletButton:active {
+    color: #78a982;
+    background: #182019;
+  }
+}
+.mobileSocials {
+  display: flex;
+  gap: 6px;
+}
+
+.mobileSocials a {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #303530;
+  border-radius: 5px;
+  background: #151815;
+  color: #8f9b92;
+  text-decoration: none;
+}
+
+.mobileSocials img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 700px) {
+  .topbar {
+    position: relative;
+    z-index: 9999;
+  }
+}
