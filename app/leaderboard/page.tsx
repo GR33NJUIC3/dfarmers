@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Footer from "../components/Footer";
 
 type Farmer = {
   rank: number;
@@ -470,6 +471,7 @@ export default function LeaderboardPage() {
             as assets move and autonomous execution occurs.
           </p>
         </section>
+        <Footer />
       </main>
     </div>
   );

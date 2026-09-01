@@ -1,5 +1,7 @@
 "use client";
 
+import Footer from "../components/Footer";
+
 export default function Risk() {
   return (
     <div className="app">
@@ -396,7 +398,7 @@ export default function Risk() {
         </div>
 
       </section>
-
+<Footer />
     </main>
     </div>
   );

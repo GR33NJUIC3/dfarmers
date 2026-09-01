@@ -1,5 +1,7 @@
 "use client";
 
+import Footer from "../components/Footer";
+
 export default function Terms() {
   return (
     <div className="app">
@@ -475,7 +477,7 @@ export default function Terms() {
         </div>
 
       </section>
-
+<Footer />
     </main>
     </div>
   );

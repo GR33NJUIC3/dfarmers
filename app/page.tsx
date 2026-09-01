@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
+import SystemAdmission from "./components/systemadmission";
 
 type Farmer = {
   id: number;
@@ -159,6 +161,8 @@ export default function Home() {
 
   return (
     <main className="app">
+<SystemAdmission />
+
       <div className="backgroundGrid" />
 
       <header className="topbar">
@@ -255,7 +259,7 @@ export default function Home() {
       <section className="shell">
         <div className="shellTop">
           <div className="titleBlock">
-            <span className="eyebrow">ENGAGE DERP. GENERATE dFARMER. dFARMER AUTONOMOUSLY EXECUTES.</span>
+            <span className="eyebrow">YOUR FARMER. YOUR STRATEGY. AUTONOMOUSLY EXECUTED.</span>
             <div className="titleLine">
             </div>
           </div>
@@ -456,14 +460,7 @@ Your dFarmer starts with an autonomous strategy at mint, defining how it interac
   </div>
 </section>
 
-
-
-      <footer>
-        <span>dFarmers</span>
-        <span><i className="footerSprout">✦</i> ON-CHAIN FARMER NETWORK</span>
-        <span>2026 / SEASON 01</span>
-      </footer>
-
+<Footer />
 
     </main>
   );

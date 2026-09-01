@@ -2,6 +2,7 @@
 
 import "./almanac.css";
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 
 type Asset = {
   code: string;
@@ -1531,7 +1532,7 @@ Validate Requested Amount
           Robinhood Chain Documentation
         </a>
       </section>
-
+<Footer />
     </main>
   );
 }

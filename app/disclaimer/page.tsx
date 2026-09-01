@@ -1,5 +1,7 @@
 "use client";
 
+import Footer from "../components/Footer";
+
 export default function Disclaimer() {
   return (
     <div className="app">
@@ -380,7 +382,7 @@ export default function Disclaimer() {
         </div>
 
       </section>
-
+<Footer />
     </main>
     </div>
   );

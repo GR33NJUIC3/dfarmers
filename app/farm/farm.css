@@ -1,0 +1,1262 @@
+/* dFarmers FARM PAGE
+   Standalone stylesheet.
+   Import only from app/farm/page.tsx:
+   import "./farm.css";
+*/
+
+.dfFarm {
+  --df-green: #79a985;
+  --df-green-light: #91bd9a;
+  --df-green-dark: #547e5b;
+  --df-bg: #080d09;
+  --df-panel: #0c130e;
+  --df-panel-2: #101811;
+  --df-line: rgba(121, 169, 133, 0.17);
+  --df-muted: #68766d;
+
+  min-height: 100vh;
+  background: #080d09;
+  color: #dbe5de;
+  font-family: "Space Grotesk", sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.dfFarm *,
+.dfFarm *::before,
+.dfFarm *::after {
+  box-sizing: border-box;
+}
+
+.dfFarm button,
+.dfFarm input {
+  font: inherit;
+}
+
+.dfFarm button {
+  cursor: pointer;
+}
+
+.dfGrid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(121,169,133,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(121,169,133,.025) 1px, transparent 1px);
+  background-size: 45px 45px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.dfHeader {
+  height: 74px;
+  padding: 0 4.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.dfBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #dce6df;
+  text-decoration: none;
+}
+
+.dfLogo {
+  height: 27px;
+  width: 23px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.dfLogo i {
+  display: block;
+  width: 4px;
+  background: var(--df-green);
+}
+
+.dfLogo i:nth-child(1) { height: 9px; }
+.dfLogo i:nth-child(2) { height: 14px; }
+.dfLogo i:nth-child(3) { height: 20px; }
+.dfLogo i:nth-child(4) { height: 26px; }
+
+.dfBrandText {
+  display: grid;
+  gap: 3px;
+}
+
+.dfBrandText b {
+  font: 700 17px "DM Mono", monospace;
+  letter-spacing: .04em;
+}
+
+.dfBrandText small {
+  font: 500 6px "DM Mono", monospace;
+  letter-spacing: .17em;
+  color: #59655c;
+}
+
+.dfTopNav {
+  display: flex;
+  gap: 38px;
+}
+
+.dfTopNav button {
+  border: 0;
+  background: none;
+  color: #819087;
+  font: 500 11px "DM Mono", monospace;
+  letter-spacing: .14em;
+}
+
+.dfTopNav button:hover {
+  color: var(--df-green-light);
+}
+
+.dfWallet {
+  padding: 10px 13px;
+  border: 1px solid var(--df-line);
+  color: #829087;
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .08em;
+}
+
+.dfStatusDot,
+.dfFarm .identityStatus span,
+.dfFarm .tractorBox i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  background: var(--df-green-light);
+  box-shadow: 0 0 12px rgba(145,189,154,.7);
+  margin-right: 7px;
+}
+
+.dfRule {
+  height: 1px;
+  background: var(--df-line);
+}
+
+.dfShell {
+  width: min(1440px, 91vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 42px;
+  padding: 42px 0 60px;
+}
+
+/* SIDEBAR */
+
+.dfSidebar {
+  min-height: calc(100vh - 170px);
+  border-right: 1px solid var(--df-line);
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.farmerIdentity {
+  border: 1px solid var(--df-line);
+  background: rgba(12,19,14,.72);
+  padding: 14px;
+}
+
+.identityTop {
+  display: flex;
+  justify-content: space-between;
+  color: var(--df-green);
+  font: 500 8px "DM Mono", monospace;
+  letter-spacing: .14em;
+}
+
+.farmerGlyph {
+  width: 58px;
+  height: 58px;
+  margin: 23px 0 18px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--df-green-dark);
+  color: var(--df-green-light);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.farmerIdentity h2 {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: .08em;
+}
+
+.farmerIdentity p {
+  margin: 7px 0 18px;
+  color: #4f5d54;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .1em;
+}
+
+.identityStatus {
+  color: #7b897f;
+  font: 500 8px "DM Mono", monospace;
+}
+
+.sideLabel {
+  margin: 34px 0 11px;
+  color: #46534a;
+  font: 500 8px "DM Mono", monospace;
+  letter-spacing: .16em;
+}
+
+.sideLink {
+  border: 0;
+  border-left: 2px solid transparent;
+  background: transparent;
+  color: #69766d;
+  text-align: left;
+  padding: 13px 10px;
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .09em;
+}
+
+.sideLink span {
+  color: #3f4b43;
+  margin-right: 12px;
+}
+
+.sideLink:hover,
+.sideLink.active {
+  color: #dce6df;
+  background: rgba(121,169,133,.055);
+  border-left-color: var(--df-green);
+}
+
+.sideLink.active span {
+  color: var(--df-green);
+}
+
+.sideSpacer {
+  flex: 1;
+  min-height: 50px;
+}
+
+.tractorBox {
+  border-top: 1px solid var(--df-line);
+  border-bottom: 1px solid var(--df-line);
+  padding: 16px 0;
+  display: grid;
+  gap: 9px;
+}
+
+.tractorBox > span,
+.tractorBox small {
+  color: #4f5c53;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .14em;
+}
+
+.tractorBox strong {
+  color: var(--df-green-light);
+  font: 500 9px "DM Mono", monospace;
+}
+
+.tractorBox small {
+  line-height: 1.5;
+}
+
+.resetLink {
+  margin-top: 13px;
+  border: 0;
+  background: none;
+  color: #665858;
+  text-align: left;
+  padding: 8px 0;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .1em;
+}
+
+.resetLink:hover {
+  color: #a77b7b;
+}
+
+/* MAIN */
+
+.dfMain {
+  min-width: 0;
+}
+
+.pageIntro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+.eyebrow,
+.greenLabel,
+.panelBar,
+.panelHeading > div > span,
+.stat span,
+.inputLabel {
+  color: var(--df-green);
+  font: 500 8px "DM Mono", monospace;
+  letter-spacing: .16em;
+}
+
+.pageIntro h1 {
+  margin: 12px 0 14px;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: .82;
+  letter-spacing: -.07em;
+}
+
+.pageIntro h1 em,
+.heroContent h2 em,
+.strategyHeader h2 em {
+  color: var(--df-green);
+  font-style: normal;
+}
+
+.pageIntro p,
+.strategyHeader p {
+  max-width: 650px;
+  margin: 0;
+  color: #6f7c73;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.introMeta {
+  min-width: 190px;
+  border-left: 1px solid var(--df-green-dark);
+  padding-left: 15px;
+  display: grid;
+  gap: 7px;
+}
+
+.introMeta span {
+  color: #4d5b51;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .14em;
+}
+
+.introMeta b {
+  color: #a1afa5;
+  font: 500 9px "DM Mono", monospace;
+  margin-bottom: 6px;
+}
+
+.dfNotice {
+  border: 1px solid rgba(121,169,133,.35);
+  background: rgba(121,169,133,.05);
+  color: var(--df-green-light);
+  padding: 11px 13px;
+  margin: -15px 0 16px;
+  font: 500 8px "DM Mono", monospace;
+  letter-spacing: .1em;
+}
+
+/* PANELS */
+
+.heroPanel,
+.dfFarm .panel,
+.dfFarm .modelStrip,
+.dfFarm .executionBar {
+  border: 1px solid var(--df-line);
+  background: linear-gradient(145deg, rgba(15,24,17,.94), rgba(9,14,10,.96));
+}
+
+.heroPanel {
+  padding: 19px;
+}
+
+.panelBar {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--df-line);
+}
+
+.panelBar b {
+  color: var(--df-green-light);
+  font: 500 8px "DM Mono", monospace;
+}
+
+.panelBar i {
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--df-green-light);
+  margin-right: 6px;
+}
+
+.heroContent {
+  min-height: 390px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: center;
+  gap: 35px;
+  padding: 20px 16px;
+}
+
+.heroContent h2,
+.strategyHeader h2 {
+  margin: 12px 0 18px;
+  font-size: clamp(42px, 5vw, 67px);
+  line-height: .9;
+  letter-spacing: -.065em;
+}
+
+.heroContent p {
+  max-width: 560px;
+  color: #707d74;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 9px;
+  margin-top: 25px;
+}
+
+.dfPrimary,
+.dfSecondary,
+.dfDanger {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--df-green-dark);
+  transition: .2s;
+}
+
+.dfPrimary {
+  background: var(--df-green);
+  color: #071008;
+  font-weight: 700;
+}
+
+.dfPrimary:hover {
+  background: var(--df-green-light);
+}
+
+.dfPrimary b {
+  margin-left: 25px;
+  font-size: 13px;
+}
+
+.dfSecondary {
+  background: transparent;
+  color: #8a978e;
+  border-color: var(--df-line);
+}
+
+.dfSecondary:hover {
+  color: var(--df-green-light);
+  border-color: var(--df-green-dark);
+}
+
+.farmDiagram {
+  width: 280px;
+  height: 280px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+}
+
+.diagramRing {
+  position: absolute;
+  border: 1px solid rgba(121,169,133,.2);
+  border-radius: 50%;
+}
+
+.diagramRing.outer {
+  width: 270px;
+  height: 270px;
+  border-style: dashed;
+  animation: dfFarmSpin 28s linear infinite;
+}
+
+.diagramRing.inner {
+  width: 185px;
+  height: 185px;
+  border-color: rgba(121,169,133,.4);
+  box-shadow: 0 0 60px rgba(121,169,133,.08);
+}
+
+.diagramCore {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--df-green);
+  color: var(--df-green-light);
+  background: #0a120c;
+  font-size: 24px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.diagramLabel {
+  position: absolute;
+  color: #56645a;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .13em;
+}
+
+.diagramLabel.top { top: 0; }
+.diagramLabel.right { right: -4px; top: 50%; }
+.diagramLabel.bottom { bottom: 0; }
+.diagramLabel.left { left: -3px; top: 50%; }
+
+@keyframes dfFarmSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* STATS */
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--df-line);
+  border-top: 0;
+}
+
+.dfFarm .stat {
+  min-height: 88px;
+  padding: 18px;
+  border-right: 1px solid var(--df-line);
+  display: grid;
+  align-content: center;
+  gap: 7px;
+}
+
+.dfFarm .stat:last-child {
+  border-right: 0;
+}
+
+.dfFarm .stat strong {
+  color: #dbe5de;
+  font: 500 18px "DM Mono", monospace;
+}
+
+.dfFarm .stat small {
+  color: #4f5c53;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .08em;
+}
+
+/* ASSETS */
+
+.assetGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.assetCard {
+  min-height: 135px;
+  padding: 15px;
+  position: relative;
+  border: 1px solid var(--df-line);
+  background: #0a120c;
+}
+
+.assetNumber {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  color: #29372d;
+  font: 500 17px "DM Mono", monospace;
+}
+
+.assetSymbol {
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(121,169,133,.3);
+  display: grid;
+  place-items: center;
+  color: var(--df-green);
+  margin-bottom: 22px;
+}
+
+.assetCard small {
+  display: block;
+  color: #657269;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .1em;
+}
+
+.assetCard strong {
+  display: block;
+  color: var(--df-green-light);
+  margin-top: 5px;
+  font: 500 15px "DM Mono", monospace;
+}
+
+.assetCard em {
+  position: absolute;
+  left: 15px;
+  bottom: 13px;
+  color: #3e4b42;
+  font: 500 7px "DM Mono", monospace;
+  font-style: normal;
+}
+
+/* FLOW */
+
+.modelStrip {
+  margin-top: 17px;
+  display: grid;
+  grid-template-columns: 1fr 25px 1fr 25px 1fr 25px 1fr;
+  align-items: center;
+  padding: 12px;
+}
+
+.modelStrip div {
+  padding: 8px 13px;
+}
+
+.modelStrip span {
+  display: block;
+  color: #4f5d54;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .13em;
+}
+
+.modelStrip strong {
+  display: block;
+  margin-top: 5px;
+  color: #a5b1a9;
+  font: 500 9px "DM Mono", monospace;
+}
+
+.modelStrip > b {
+  color: var(--df-green-dark);
+  text-align: center;
+}
+
+/* STRATEGY */
+
+.strategyPage,
+.capitalPage {
+  display: grid;
+  gap: 17px;
+}
+
+.strategyHeader {
+  padding: 28px 30px;
+  border: 1px solid var(--df-line);
+  background: radial-gradient(circle at 75% 40%, rgba(121,169,133,.08), transparent 30%), #0b130d;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+}
+
+.configBadge,
+.balanceBox {
+  min-width: 185px;
+  border-left: 1px solid var(--df-green-dark);
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.configBadge span,
+.balanceBox span {
+  color: #4e5b52;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .13em;
+}
+
+.configBadge strong {
+  color: var(--df-green-light);
+  font: 500 20px "DM Mono", monospace;
+}
+
+.configBadge small {
+  color: #536057;
+  font: 500 7px "DM Mono", monospace;
+}
+
+.panelHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--df-line);
+}
+
+.panelHeading h3 {
+  margin: 7px 0 0;
+  font-size: 15px;
+  letter-spacing: .02em;
+}
+
+.panelHeading > b {
+  color: #4f5d54;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .12em;
+}
+
+.controlGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 27px 42px;
+  padding-top: 25px;
+}
+
+.controlTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.controlTop strong {
+  display: block;
+  color: #a8b4ac;
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .11em;
+}
+
+.controlTop small {
+  display: block;
+  margin-top: 7px;
+  color: #56635a;
+  font-size: 9px;
+}
+
+.controlTop > b {
+  color: var(--df-green-light);
+  font: 500 18px "DM Mono", monospace;
+}
+
+.control input[type="range"] {
+  width: 100%;
+  margin: 19px 0 8px;
+  accent-color: var(--df-green);
+}
+
+.rangeLine {
+  display: flex;
+  justify-content: space-between;
+  color: #445149;
+  font: 500 7px "DM Mono", monospace;
+}
+
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.module {
+  text-align: left;
+  min-height: 170px;
+  padding: 16px;
+  border: 1px solid var(--df-line);
+  background: #0a120c;
+  color: #b7c3bb;
+  position: relative;
+}
+
+.module:hover,
+.module.enabled {
+  border-color: rgba(121,169,133,.4);
+  background: rgba(121,169,133,.04);
+}
+
+.moduleTop {
+  display: flex;
+  justify-content: space-between;
+  color: #4f5d54;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .12em;
+  margin-bottom: 26px;
+}
+
+.module.enabled .moduleTop {
+  color: var(--df-green);
+}
+
+.moduleTop i {
+  width: 22px;
+  height: 22px;
+  border: 1px solid currentColor;
+  display: grid;
+  place-items: center;
+  font-style: normal;
+}
+
+.module strong {
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+
+.module p {
+  color: #606d64;
+  font-size: 9px;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.switch {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 29px;
+  height: 15px;
+  border: 1px solid #334138;
+  border-radius: 20px;
+}
+
+.switch i {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #455249;
+  margin: 3px;
+  transition: .2s;
+}
+
+.module.enabled .switch {
+  border-color: var(--df-green-dark);
+}
+
+.module.enabled .switch i {
+  transform: translateX(14px);
+  background: var(--df-green-light);
+  box-shadow: 0 0 10px rgba(145,189,154,.5);
+}
+
+.executionBar {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.executionBar span {
+  display: block;
+  color: #4e5b52;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .13em;
+}
+
+.executionBar strong {
+  display: block;
+  margin-top: 7px;
+  color: #a6b2aa;
+  font: 500 9px "DM Mono", monospace;
+}
+
+.mintReset {
+  justify-self: start;
+  border: 0;
+  background: none;
+  color: #635656;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .11em;
+}
+
+.mintReset:hover {
+  color: #a77b7b;
+}
+
+/* CAPITAL */
+
+.balanceBox strong {
+  color: #dbe5de;
+  font: 500 25px "DM Mono", monospace;
+}
+
+.balanceBox strong small {
+  color: var(--df-green);
+  font-size: 10px;
+}
+
+.balanceBox b {
+  color: #536057;
+  font: 500 7px "DM Mono", monospace;
+}
+
+.balanceBox i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--df-green);
+  margin-right: 5px;
+}
+
+.depositPanel {
+  padding: 22px;
+}
+
+.inputLabel {
+  display: block;
+  margin: 25px 0 9px;
+}
+
+.ethInput {
+  max-width: 700px;
+  border-bottom: 1px solid var(--df-green-dark);
+  display: flex;
+  align-items: center;
+}
+
+.ethInput input {
+  width: 100%;
+  background: none;
+  border: 0;
+  outline: 0;
+  color: #e1eae3;
+  font: 500 48px "DM Mono", monospace;
+  padding: 5px 0;
+}
+
+.ethInput input::placeholder {
+  color: #27352c;
+}
+
+.ethInput span {
+  color: var(--df-green);
+  font: 500 10px "DM Mono", monospace;
+}
+
+.deploymentGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 25px;
+  gap: 1px;
+  background: var(--df-line);
+}
+
+.deploymentGrid .stat {
+  background: #0a120c;
+  border: 0;
+}
+
+.full {
+  width: 100%;
+  margin-top: 17px;
+}
+
+/* ACTIVITY */
+
+.activityPage {
+  padding: 22px;
+}
+
+.activityRow {
+  min-height: 65px;
+  border-bottom: 1px solid var(--df-line);
+  display: grid;
+  grid-template-columns: 45px 1fr 1fr 15px;
+  gap: 15px;
+  align-items: center;
+}
+
+.activityRow:first-of-type {
+  margin-top: 15px;
+}
+
+.activityRow > span {
+  color: var(--df-green);
+  font: 500 8px "DM Mono", monospace;
+}
+
+.activityRow strong {
+  font: 500 9px "DM Mono", monospace;
+}
+
+.activityRow small {
+  color: #58665d;
+  font-size: 9px;
+}
+
+.activityRow b {
+  color: var(--df-green);
+  font-size: 7px;
+}
+
+/* FOOTER / MODAL */
+
+.dfFooter {
+  width: min(1440px, 91vw);
+  margin: 0 auto;
+  border-top: 1px solid var(--df-line);
+  padding: 19px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  color: #3f4c43;
+  font: 500 7px "DM Mono", monospace;
+  letter-spacing: .1em;
+}
+
+.dfModalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(3,7,4,.82);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.dfModal {
+  width: min(500px, 100%);
+  padding: 28px;
+  border: 1px solid rgba(121,169,133,.35);
+  background: #0b130d;
+  box-shadow: 0 30px 100px #000;
+}
+
+.dfModal h2 {
+  margin: 13px 0;
+  font-size: 27px;
+  letter-spacing: -.04em;
+}
+
+.dfModal p {
+  color: #6e7b72;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.resetFacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 22px 0;
+  border: 1px solid var(--df-line);
+}
+
+.resetFacts span,
+.resetFacts b {
+  padding: 12px;
+  border-bottom: 1px solid var(--df-line);
+  font: 500 8px "DM Mono", monospace;
+}
+
+.resetFacts span { color: #536057; }
+.resetFacts b { color: #aab6ae; text-align: right; }
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.dfDanger {
+  background: #654545;
+  color: #fff;
+  border-color: #865b5b;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .dfShell {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .heroContent {
+    grid-template-columns: minmax(0, 1fr) 250px;
+  }
+
+  .farmDiagram {
+    transform: scale(.85);
+  }
+}
+
+@media (max-width: 800px) {
+  .dfHeader {
+    padding: 0 18px;
+  }
+
+  .dfTopNav {
+    display: none;
+  }
+
+  .dfShell {
+    width: calc(100% - 28px);
+    grid-template-columns: 1fr;
+    padding-top: 25px;
+  }
+
+  .dfSidebar {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--df-line);
+    padding: 0 0 20px;
+  }
+
+  .farmerIdentity {
+    display: none;
+  }
+
+  .sideLabel {
+    margin: 0 0 8px;
+  }
+
+  .sideLink {
+    display: inline-block;
+    width: 49%;
+  }
+
+  .sideSpacer,
+  .tractorBox {
+    display: none;
+  }
+
+  .resetLink {
+    display: block;
+  }
+
+  .pageIntro,
+  .strategyHeader {
+    display: block;
+  }
+
+  .introMeta,
+  .configBadge,
+  .balanceBox {
+    margin-top: 25px;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+  }
+
+  .farmDiagram {
+    margin: auto;
+  }
+
+  .assetGrid,
+  .moduleGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .statGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dfFarm .stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .dfFarm .stat:nth-child(n + 3) {
+    border-top: 1px solid var(--df-line);
+  }
+
+  .controlGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modelStrip {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .modelStrip > b {
+    display: none;
+  }
+
+  .executionBar {
+    display: block;
+  }
+
+  .executionBar .dfPrimary {
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .dfHeader {
+    height: 65px;
+  }
+
+  .dfBrandText b {
+    font-size: 15px;
+  }
+
+  .dfShell {
+    width: calc(100% - 20px);
+  }
+
+  .pageIntro h1 {
+    font-size: 55px;
+  }
+
+  .heroContent h2,
+  .strategyHeader h2 {
+    font-size: 44px;
+  }
+
+  .heroContent {
+    padding: 20px 5px;
+  }
+
+  .farmDiagram {
+    transform: scale(.78);
+    margin-top: -10px;
+    margin-bottom: -20px;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+  }
+
+  .dfPrimary,
+  .dfSecondary {
+    width: 100%;
+  }
+
+  .assetGrid,
+  .moduleGrid,
+  .deploymentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dfFarm .stat {
+    border-right: 0;
+    border-top: 1px solid var(--df-line);
+  }
+
+  .dfFarm .stat:first-child {
+    border-top: 0;
+  }
+
+  .activityRow {
+    grid-template-columns: 30px 1fr 12px;
+  }
+
+  .activityRow small {
+    display: none;
+  }
+
+  .dfFooter {
+    display: grid;
+    gap: 10px;
+  }
+}

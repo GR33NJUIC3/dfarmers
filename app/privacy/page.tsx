@@ -1,5 +1,7 @@
 "use client";
 
+import Footer from "../components/Footer";
+
 export default function Privacy() {
   return (
     <div className="app">
@@ -395,7 +397,7 @@ export default function Privacy() {
         </div>
 
       </section>
-
+<Footer />
     </main>
     </div>
   );

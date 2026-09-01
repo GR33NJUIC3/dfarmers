@@ -2,6 +2,7 @@
 
 import "./wheatpaper.css";
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 
 type Asset = {
   code: string;
@@ -188,14 +189,13 @@ export default function Wheatpaper() {
         <h1>WHEATPAPER</h1>
 
         <div className="wpSubtitle">
-          A Technical Architecture for DERP-Engaged ERC-721 dFarmer Identity,
-          Entropy-Determined Four-Asset Selection, Automatic Mint ETH
-          Allocation, ERC-6551 Token-Bound Accounts, Strategy-Controlled
-          Portfolios, and Constrained Autonomous Tractor Execution
+          A Cybernetic Architecture for dFarmer Identity, Entropy-Determined
+          Portfolio Formation, Token-Bound Accounts, Strategy-Controlled
+          Capital, and Constrained Autonomous Execution
         </div>
 
         <div className="wpMeta">
-          <span>VERSION 3.0</span>
+          <span>VERSION 4.0</span>
           <span>2026</span>
           <span>ROBINHOOD CHAIN</span>
         </div>
@@ -203,17 +203,19 @@ export default function Wheatpaper() {
         <div className="wpRule" />
 
         <p className="wpAbstract">
-          dFARMERS defines a dFarmer as a programmable on-chain portfolio
-          primitive. At mint, DERP is engaged in the Farmer-generation process
-          and entropy determines the Farmer&apos;s generated traits,
-          personality, and four-asset portfolio universe. The dFarmer is an
-          ERC-721 token associated with an ERC-6551 Token-Bound Account (TBA).
-          Mint ETH is automatically allocated across the four assets assigned
-          to that Farmer, establishing its initial portfolio. Thereafter,
-          owner-configurable strategy parameters govern portfolio behavior,
-          while the TBA implementation and protocol authorization layer
-          constrain what may actually be executed. Tractor operates as the
-          delegated autonomous portfolio operator within those boundaries.
+          The dFarmer is treated here not as a static collectible, but as a
+          persistent computational object around which capital, information,
+          ownership, and permitted action are organized. At generation, DERP
+          participates in the Farmer-generation process and entropy resolves
+          traits, personality, and the Farmer&apos;s four-asset portfolio
+          universe. The resulting ERC-721 identity is associated with an
+          ERC-6551 Token-Bound Account (TBA), which provides the Farmer&apos;s
+          portfolio account. Mint capital is subsequently allocated according
+          to the generated asset state. Thereafter, owner-defined strategy
+          parameters determine intended behavior, while protocol policy
+          determines the subset of that behavior that may actually occur.
+          Tractor supplies the delegated execution mechanism within those
+          boundaries.
         </p>
       </section>
 
@@ -246,40 +248,52 @@ export default function Wheatpaper() {
         <div className="wpSectionBody">
           <span className="wpSectionLabel">ABSTRACT</span>
 
-          <h2>THE dFARMER AS A PORTFOLIO PRIMITIVE</h2>
+          <h2>THE dFARMER AS A COMPUTATIONAL PORTFOLIO</h2>
 
           <p>
-            dFARMERS treats the dFarmer as a persistent portfolio identity
-            rather than a static digital collectible. The ERC-721 token
-            establishes identity and ownership; its ERC-6551 Token-Bound
-            Account provides the associated on-chain portfolio account.
+            The useful distinction is between identity and behavior. The ERC-721
+            establishes a persistent identity and ownership relation. The
+            associated ERC-6551 Token-Bound Account supplies the account through
+            which the Farmer&apos;s portfolio state may be represented and acted
+            upon. The NFT therefore identifies the system; it does not, by
+            itself, constitute the system&apos;s entire computational behavior.
           </p>
 
           <p>
-            The mint is a portfolio-generation event. DERP participates in the
-            entropy process, the resulting traits and personality determine
-            four supported assets, and those four assets become fixed to the
-            Farmer&apos;s portfolio universe. The owner cannot replace those
-            four underlying assets.
+            The mint is consequently a state-initialization event. DERP participates
+            in the generation mechanism, entropy resolves the Farmer&apos;s
+            generated state, and that state determines a four-element asset
+            universe. Once established, the four underlying assets are fixed;
+            strategy may govern their treatment, but it does not redefine the
+            domain in which the Farmer operates.
           </p>
 
           <p>
-            Mint ETH is automatically allocated across the four designated
-            assets. After initialization, the owner may configure the
-            Farmer&apos;s strategy and operating parameters through the Farm
-            interface. Tractor then evaluates the portfolio and executes
-            permitted actions subject to the protocol&apos;s authorization
-            boundaries.
+            Mint ETH establishes the initial capital state. If the initial capital is
+            M and the allocation weights are w₁,...,wₙ, then
+
+            ∑ᵢ wᵢ = 1,    Cᵢ = M wᵢ.
+
+            After initialization, the owner may alter permitted strategy
+            parameters. Tractor observes the resulting portfolio state,
+            evaluates the configured rules, and submits an action only when
+            that action satisfies the protocol&apos;s authorization boundary.
           </p>
 
           <p>
-            The system therefore separates identity, account infrastructure,
-            asset assignment, strategy, and execution authority while keeping
-            final control with the dFarmer owner and protocol-enforced rules.
+            The architecture is therefore a separation of identity, account,
+            portfolio domain, intention, policy, and execution. This separation
+            matters because an instruction to act and an authority to act are
+            not the same thing. In symbolic form:
+
+            F = (I, A, U, S, P, X)
+
+            where I is identity, A the account, U the permitted asset universe,
+            S the strategy, P the protocol policy, and X the executed action.
           </p>
 
           <div className="wpEquation">
-            dFARMER = IDENTITY + TBA + 4 ASSETS + STRATEGY + POLICY + TRACTOR
+            F = (I, A, U, S, P, X)
           </div>
         </div>
       </section>
@@ -289,13 +303,17 @@ export default function Wheatpaper() {
         <div className="wpSectionBody">
           <span className="wpSectionLabel">SYSTEM ARCHITECTURE</span>
 
-          <h2>A MULTI-LAYER PORTFOLIO MODEL</h2>
+          <h2>A SYSTEM OF STATE, CONTROL, AND FEEDBACK</h2>
 
           <p>
-            dFARMERS separates six functions that are commonly conflated:
-            who the Farmer is, where its assets reside, how its assets are
-            selected, how capital is managed, what actions are permitted, and
-            which software is authorized to execute those actions.
+            The architecture can be read as a chain of transformations. Identity
+            establishes continuity; the TBA establishes the account; generation
+            establishes the asset domain; strategy establishes intended
+            behavior; policy establishes permissible behavior; and Tractor
+            translates the permitted decision into an observable transaction.
+            The resulting system is naturally described as a feedback system:
+
+            state → observation → decision → policy check → action → new state.
           </p>
 
           <div className="wpDiagram">
@@ -347,7 +365,7 @@ export default function Wheatpaper() {
           </div>
 
           <div className="wpEquation">
-            IDENTITY → ACCOUNT → GENERATION → 4-ASSET UNIVERSE → STRATEGY → TRACTOR → EXECUTION
+            IDENTITY → ACCOUNT → GENERATION → ASSET UNIVERSE → STRATEGY → POLICY → EXECUTION
           </div>
         </div>
       </section>
@@ -357,19 +375,25 @@ export default function Wheatpaper() {
         <div className="wpSectionBody">
           <span className="wpSectionLabel">dFARMER IDENTITY</span>
 
-          <h2>ERC-721 AS THE IDENTITY PRIMITIVE</h2>
+          <h2>ERC-721 AS THE IDENTITY COORDINATE</h2>
 
           <p>
-            Each dFarmer is represented by a unique ERC-721 token. ERC-721
-            supplies the canonical non-fungible identity by which the Farmer
-            can be owned, transferred, identified, and associated with its
-            corresponding Token-Bound Account.
+            Each dFarmer is represented by an ERC-721 token. Its principal function
+            in this architecture is persistence of identity: the pair
+
+            I = (C, N)
+
+            where C is the collection contract and N is the token identifier,
+            supplies a stable reference to the Farmer across transfers and
+            state changes.
           </p>
 
           <p>
-            The identity is the persistent reference to which the
-            Farmer&apos;s generated traits, personality, four-asset universe,
-            TBA, strategy configuration, and portfolio state are attached.
+            The identity acts as the coordinate to which generated traits,
+            personality, asset-domain information, account association,
+            strategy configuration, and portfolio state are related. Ownership
+            therefore changes the controlling principal without requiring the
+            identity of the Farmer to be recreated.
           </p>
 
           <div className="wpCode">
@@ -407,14 +431,16 @@ dFarmer Identity`}
         <div className="wpSectionBody">
           <span className="wpSectionLabel">ACCOUNT MODEL</span>
 
-          <h2>ERC-6551 TOKEN-BOUND ACCOUNT</h2>
+          <h2>THE TOKEN-BOUND ACCOUNT AS PORTFOLIO STATE</h2>
 
           <p>
-            ERC-6551 provides the account framework by which an NFT may be
-            associated with a Token-Bound Account. In dFARMERS, the TBA
-            serves as the dFarmer&apos;s on-chain portfolio account: the
-            account in which supported positions are held and through which
-            permitted portfolio operations are executed.
+            ERC-6551 provides the account relationship through which an NFT may be
+            associated with a Token-Bound Account. In dFARMERS, the TBA is
+            intended to function as the Farmer&apos;s portfolio account. This
+            creates a useful separation:
+
+            identity answers “which Farmer?”;
+            the TBA answers “where is its portfolio state?”.
           </p>
 
           <div className="wpDiagram wpVertical">
@@ -442,21 +468,26 @@ dFarmer Identity`}
           </div>
 
           <p>
-            ERC-6551 itself does not define dFARMERS trading rules,
-            authorization policy, withdrawal limits, or autonomous execution.
-            Those properties are supplied by the deployed TBA implementation,
-            protocol contracts, and authorization layer.
+            ERC-6551 itself does not define dFARMERS trading rules, authorization
+            policy, withdrawal limits, or autonomous execution. Those properties
+            belong to the deployed TBA implementation, protocol contracts, and
+            authorization layer. The standard establishes the account model;
+            the implementation establishes the behavior.
           </p>
 
           <p>
-            In this architecture, the TBA functions as both the Farmer&apos;s
-            account and the primary enforcement boundary for delegated
-            execution. Tractor can submit an action, but the account and
-            protocol logic determine whether that action is permitted.
+            The TBA therefore occupies an important control boundary. Tractor may
+            propose or submit an action, but submission is not equivalent to
+            authority. The intended relationship is:
+
+            Tractor authority ⊆ Farmer permissions ⊆ protocol policy.
+
+            The account and protocol determine whether the proposed transition
+            is admissible.
           </p>
 
           <div className="wpEquation">
-            ERC-721 dFARMER → ERC-6551 TBA → PORTFOLIO ACCOUNT + ENFORCEMENT LAYER
+            ERC-721 IDENTITY → ERC-6551 ACCOUNT → PORTFOLIO STATE
           </div>
         </div>
       </section>
@@ -466,19 +497,28 @@ dFarmer Identity`}
         <div className="wpSectionBody">
           <span className="wpSectionLabel">FARMER GENERATION</span>
 
-          <h2>DERP ENGAGEMENT AND ENTROPY-DRIVEN GENERATION</h2>
+          <h2>GENERATION, ENTROPY, AND INITIAL CONDITIONS</h2>
 
           <p>
-            DERP is engaged in the Farmer-generation mechanism as an entropy
-            input. At mint, the generation process resolves the Farmer&apos;s
-            traits and personality. That generated state determines the
-            Farmer&apos;s four designated supported assets.
+            DERP is engaged in the Farmer-generation mechanism as an input to the
+            generation process. Let R denote the relevant entropy state and G
+            the generation function. Then:
+
+            G(R) = (T, P, U)
+
+            where T denotes generated traits, P the generated personality,
+            and U the resulting asset universe.
           </p>
 
           <p>
-            The asset universe is therefore established during generation. It
-            is not selected later by the owner and cannot be replaced through
-            the strategy interface.
+            The important invariant is that the generated asset domain is not a
+            strategy variable. Once U₀ has been established at generation,
+
+            Uₜ = U₀   for subsequent t,
+
+            subject to the actual deployed protocol rules. The owner may alter
+            permitted behavior inside U, but does not redefine U through the
+            strategy interface.
           </p>
 
           <div className="wpDiagram">
@@ -522,7 +562,7 @@ dFarmer Identity`}
           </div>
 
           <div className="wpEquation">
-            DERP → ENTROPY → TRAITS → PERSONALITY → FOUR ASSETS
+            DERP → ENTROPY STATE → GENERATED STATE → PERSONALITY → ASSET UNIVERSE
           </div>
         </div>
       </section>
@@ -532,12 +572,17 @@ dFarmer Identity`}
         <div className="wpSectionBody">
           <span className="wpSectionLabel">FOUR-ASSET UNIVERSE</span>
 
-          <h2>THE FARMER RECEIVES FOUR FIXED ASSETS</h2>
+          <h2>THE ASSET UNIVERSE AS A STATE-SPACE BOUNDARY</h2>
 
           <p>
-            Each Farmer receives exactly four supported underlying assets as a
-            consequence of the mint-time generation process. These assets
-            constitute that Farmer&apos;s permitted portfolio universe.
+            Let the Farmer&apos;s generated asset universe be
+
+            U = &#123;a₁, a₂, a₃, a₄&#125;.
+
+            The four elements are the domain over which portfolio allocation
+            and strategy may operate. The distinction between the universe and
+            the allocation is fundamental: U describes what may be represented;
+            the weights w describe how capital is distributed within U.
           </p>
 
           <div className="wpGrid3">
@@ -578,13 +623,14 @@ dFarmer Identity`}
           </div>
 
           <p>
-            This separation is fundamental. Asset assignment occurs once
-            during Farmer generation; portfolio management remains configurable
-            after mint.
+            Thus the system separates selection from control. Generation establishes
+            the domain U; strategy determines a permitted state within that
+            domain. This prevents an owner strategy from silently redefining
+            the Farmer&apos;s underlying identity or generated asset class.
           </p>
 
           <div className="wpEquation">
-            PERSONALITY → FOUR ASSIGNED ASSETS → FIXED PORTFOLIO UNIVERSE
+            PERSONALITY → U = &#123;a₁,a₂,a₃,a₄&#125; → FIXED ASSET DOMAIN
           </div>
         </div>
       </section>
@@ -594,26 +640,31 @@ dFarmer Identity`}
         <div className="wpSectionBody">
           <span className="wpSectionLabel">REGIONAL ASSET ELIGIBILITY</span>
 
-          <h2>STOCK TOKEN AVAILABILITY IS REGION-DEPENDENT</h2>
+          <h2>ELIGIBILITY AS AN ENVIRONMENTAL CONSTRAINT</h2>
 
           <p>
-            The four-asset Farmer model is subject to the legal and geographic
-            availability of supported tokenized stock assets. The stock
-            positions described in the Farmer-generation model are not
-            universally available to every minter. Eligibility depends on
-            whether the minter is located in a jurisdiction in which the
-            applicable Robinhood tokenized stock assets are permitted and
-            available.
+            The asset universe is also conditional upon external eligibility. Let
+            E(a,r) ∈ &#123;0,1&#125; denote whether asset a is available to a participant
+            in region r. The effective universe is therefore
+
+            U(r) = &#123;a ∈ U : E(a,r)=1&#125;.
+
+            The system must not treat an unavailable asset as though it were
+            executable merely because it exists in the general universe.
           </p>
 
           <p>
-            Where the minter is located in an eligible region, the Farmer may
-            receive its four designated supported stock assets according to the
-            established generation process. Where the minter is located in a
-            region in which Robinhood stock tokens are not permitted or
-            available, the Farmer does not receive those stock positions.
-            Instead, the Farmer receives a three-asset allocation consisting of
-            $STONKBROKER, $DERP, and Ethereum, allocated at 33% each.
+            Where the applicable stock-token assets are eligible, the generated
+            four-asset model may be used. Where they are unavailable or not
+            permitted, the specified fallback is
+
+            Ufallback = &#123;$STONKBROKER, $DERP, ETH&#125;
+
+            with equal weights
+
+            w₁ = w₂ = w₃ = 1/3 ≈ 33.333%.
+
+            This satisfies the required normalization ∑wᵢ = 1.
           </p>
 
           <div className="wpGrid2">
@@ -631,32 +682,30 @@ dFarmer Identity`}
               <strong>NON-ELIGIBLE REGION</strong>
               <span>THREE-ASSET FALLBACK</span>
               <p>
-                The Farmer receives $STONKBROKER, $DERP, and Ethereum at 33%
-                each when Robinhood stock tokens are unavailable or not
-                permitted in the minter&apos;s region.
+                The Farmer receives $STONKBROKER, $DERP, and Ethereum with normalized
+                equal weights of 1/3 each when the applicable stock tokens are
+                unavailable or not permitted.
               </p>
             </div>
           </div>
 
           <div className="wpEquation">
-            NON-ELIGIBLE REGION = $STONKBROKER 33% + $DERP 33% + ETHEREUM 33%
+            NON-ELIGIBLE REGION = &#123;$STONKBROKER, $DERP, ETH&#125; ; wᵢ = 1/3
           </div>
 
           <p>
-            Regional eligibility is therefore an input to the Farmer&apos;s
-            initial asset configuration. The protocol does not assume that
-            tokenized stock access is globally uniform, and it does not
-            represent unavailable stock positions as though they were
-            accessible to an ineligible minter.
+            Regional eligibility is consequently part of the initial state function.
+            The portfolio cannot be described independently of the environment
+            in which its permitted assets may be accessed. This is not merely a
+            legal qualification; it is a system constraint on the reachable
+            state space.
           </p>
 
           <p>
-            dFARMERS will actively monitor newly qualified regions,
-            regulatory developments, and amendments to applicable laws and
-            rules that may change the availability of supported tokenized
-            stock assets. As additional jurisdictions become qualified, the
-            protocol may evaluate those regions for inclusion in the supported
-            deployment and asset-eligibility framework.
+            Changes in regional eligibility may therefore change the set of reachable
+            portfolio states. Any expansion of supported regions or assets
+            remains dependent upon the applicable deployment, infrastructure,
+            and rules governing those assets.
           </p>
         </div>
       </section>
@@ -666,20 +715,25 @@ dFarmer Identity`}
         <div className="wpSectionBody">
           <span className="wpSectionLabel">STRATEGY ENGINE</span>
 
-          <h2>STRATEGY DETERMINES HOW THE FARMER OPERATES</h2>
+          <h2>STRATEGY AS A CONTROL FUNCTION</h2>
 
           <p>
-            Asset assignment and portfolio management are separate functions.
-            The four underlying assets are fixed by the Farmer-generation
-            process; strategy determines how capital and positions may be
-            managed within that universe.
+            Strategy is a control function over an already-defined state space.
+            If xₜ denotes portfolio state, yₜ the observed environment, and θ
+            the owner-configured parameters, the intended control may be written
+
+            uₜ = S(xₜ, yₜ; θ).
+
+            The strategy does not create the asset universe; it determines
+            permitted behavior within it.
           </p>
 
           <p>
-            Farmers are initially assigned a strategy, but the owner can
-            subsequently modify the Farmer&apos;s strategy and operating
-            parameters through the Farm interface, subject to protocol-defined
-            boundaries.
+            The Farmer may begin with an assigned strategy and subsequently accept
+            owner configuration within the permitted parameter space. The
+            important distinction is between changing θ and changing the
+            protocol itself: the former is configuration; the latter is outside
+            ordinary strategy control.
           </p>
 
           <div className="wpGrid3">
@@ -721,14 +775,15 @@ dFarmer Identity`}
           </div>
 
           <p>
-            The strategies are intended to be derived from published academic
-            research supporting the underlying portfolio methodologies. They
-            are implemented as defined autonomous flows rather than as claims
-            of unrestricted artificial intelligence.
+            The strategies are intended to be grounded in published portfolio
+            methodologies and expressed as explicit rules. The present system
+            should therefore be understood as constrained automation, not as a
+            claim that an unrestricted artificial intelligence independently
+            invents investment policy.
           </p>
 
           <div className="wpEquation">
-            STRATEGY = OWNER PARAMETERS ∩ RESEARCH-BASED RULES ∩ PROTOCOL LIMITS
+            uₜ = S(xₜ,yₜ;θ),    subject to    uₜ ∈ P
           </div>
         </div>
       </section>
@@ -738,12 +793,18 @@ dFarmer Identity`}
         <div className="wpSectionBody">
           <span className="wpSectionLabel">CAPITAL ALLOCATION</span>
 
-          <h2>MINT CAPITAL FOLLOWS THE GENERATED FARMER</h2>
+          <h2>CAPITAL ALLOCATION AS STATE INITIALIZATION</h2>
 
           <p>
-            The initial economic state of a Farmer is established at mint. ETH
-            received from the mint is automatically allocated across the four
-            assets determined for that Farmer.
+            Minting establishes an initial capital state. Let M be the capital
+            available for allocation and wᵢ the weight assigned to asset aᵢ.
+            Then
+
+            Cᵢ = M wᵢ,      ∑ᵢ wᵢ = 1.
+
+            The resulting initial portfolio is
+
+            P₀ = &#123;(aᵢ, Cᵢ)&#125;.
           </p>
 
           <div className="wpDiagram">
@@ -779,14 +840,17 @@ dFarmer Identity`}
           </div>
 
           <div className="wpEquation">
-            MINT ETH → FOUR MINT-DETERMINED ASSETS → INITIAL PORTFOLIO
+            M → &#123;a₁,a₂,a₃,a₄&#125; → wᵢ → Cᵢ = M wᵢ → P₀
           </div>
 
           <p>
-            Subsequent capital may be introduced through the Farmer account
-            environment and managed according to the active strategy. The
-            exact routing and execution path remains dependent on the deployed
-            protocol contracts and supported execution environment.
+            After initialization, additional capital changes the portfolio state
+            according to the deployed funding and execution rules. In general,
+
+            xₜ₊₁ = f(xₜ, mₜ, uₜ, εₜ),
+
+            where mₜ is capital introduced at time t, uₜ is the permitted
+            control action, and εₜ represents external execution conditions.
           </p>
         </div>
       </section>
@@ -796,12 +860,12 @@ dFarmer Identity`}
         <div className="wpSectionBody">
           <span className="wpSectionLabel">MINT CAPITAL & FUNDING</span>
 
-          <h2>FROM MINT TO FARMER CAPITAL</h2>
+          <h2>CAPITAL AS A DYNAMIC STATE VARIABLE</h2>
 
           <p>
-            The mint establishes the Farmer&apos;s initial portfolio. The
-            generation process determines the four assets, and mint ETH is
-            automatically deployed across those assets.
+            The mint therefore performs two coupled operations: it establishes
+            identity and initializes capital. Generation determines the asset
+            domain; allocation maps available mint capital onto that domain.
           </p>
 
           <div className="wpFlow">
@@ -857,28 +921,32 @@ dFarmer Identity`}
         <div className="wpSectionBody">
           <span className="wpSectionLabel">AUTONOMOUS EXECUTION</span>
 
-          <h2>TRACTOR AS THE DELEGATED AUTONOMOUS OPERATOR</h2>
+          <h2>TRACTOR AS THE EXECUTION ELEMENT OF A FEEDBACK LOOP</h2>
 
           <p>
-            Tractor is the autonomous application layer responsible for
-            operating a dFarmer within its configured strategy and protocol
-            permissions.
+            Tractor is the delegated execution mechanism of the system. Its purpose
+            is not to possess unrestricted authority, but to translate an
+            admissible strategy decision into an attempted state transition.
           </p>
 
           <p>
-            Tractor monitors portfolio state and the Farmer&apos;s configured
-            strategy, determines when a permitted action should occur, and
-            submits the corresponding transaction. Tractor is not granted
-            unrestricted control over the Farmer.
+            At time t, Tractor observes portfolio state xₜ and relevant information
+            yₜ. It evaluates the configured strategy and produces an intended
+            action uₜ. The action is then subjected to protocol policy before
+            execution. Thus observation precedes action, and action remains
+            subordinate to authority.
           </p>
 
           <p>
-            When Tractor submits an action, the TBA authorization layer
-            evaluates the request against the Farmer&apos;s permitted assets,
-            approved contracts, allocation rules, transaction limits, trading
-            restrictions, liquidation constraints, and other protocol-defined
-            policies. An action that falls outside those boundaries must not
-            execute.
+            Let P denote the set of protocol-permitted actions. Then the executable
+            action is
+
+            Xₜ = uₜ,  if uₜ ∈ P
+                 ∅,   otherwise.
+
+            The significance is structural: a strategy can produce an
+            intention that the protocol refuses to realize. Autonomy is thus
+            bounded by the set of reachable states defined by policy.
           </p>
 
           <div className="wpCode">
@@ -914,13 +982,15 @@ Authorization / Policy Validation
           </div>
 
           <div className="wpEquation">
-            EXECUTION = TRACTOR INTENT ∧ AUTHORIZATION ∧ PROTOCOL POLICY
+            Xₜ = S(xₜ,yₜ;θ) ∩ P
           </div>
 
           <p>
-            The owner retains ultimate control over the Farmer and can revoke
-            Tractor&apos;s authorization. The system is therefore designed as
-            constrained delegation rather than unrestricted autonomous custody.
+            The owner remains the controlling principal for the Farmer, while Tractor
+            operates through delegated permissions that may be revoked according
+            to the deployed implementation. The architecture is therefore one
+            of constrained delegation rather than unrestricted autonomous
+            custody.
           </p>
         </div>
       </section>
@@ -930,13 +1000,17 @@ Authorization / Policy Validation
         <div className="wpSectionBody">
           <span className="wpSectionLabel">WITHDRAWAL ARCHITECTURE</span>
 
-          <h2>PROTOCOL-CONSTRAINED CAPITAL WITHDRAWAL</h2>
+          <h2>WITHDRAWAL AS A CONSTRAINED STATE TRANSITION</h2>
 
           <p>
-            The Farmer&apos;s TBA is designed around continued portfolio
-            participation. Withdrawals are therefore subject to protocol
-            constraints intended to prevent unrestricted extraction of
-            portfolio positions.
+            Withdrawal is another state transition governed by policy. If Bᵢ denotes
+            the balance of position i, the stated per-position constraint is
+
+            Wᵢ ≤ 0.5 Bᵢ.
+
+            If tₗ denotes the last withdrawal time, the stated cooldown requires
+
+            t - tₗ ≥ 365 days.
           </p>
 
           <div className="wpGrid2">
@@ -944,8 +1018,7 @@ Authorization / Policy Validation
               <strong>12 MONTHS</strong>
               <span>WITHDRAWAL COOLDOWN</span>
               <p>
-                A Farmer may execute a withdrawal no more than once during a
-                twelve-month period.
+                A withdrawal is admissible only after the stated twelve-month interval has elapsed.
               </p>
             </div>
 
@@ -953,8 +1026,7 @@ Authorization / Policy Validation
               <strong>50%</strong>
               <span>MAXIMUM PER POSITION</span>
               <p>
-                A maximum of 50% of each individual TBA position may be
-                withdrawn during the permitted withdrawal window.
+                For each position, the withdrawal amount satisfies Wᵢ ≤ 0.5Bᵢ.
               </p>
             </div>
 
@@ -962,8 +1034,7 @@ Authorization / Policy Validation
               <strong>50%</strong>
               <span>REMAINS IN EACH POSITION</span>
               <p>
-                At least half of each position remains inside the Farmer&apos;s
-                TBA following a maximum withdrawal.
+                Under a maximum withdrawal, the remaining balance satisfies Bᵢ' ≥ 0.5Bᵢ.
               </p>
             </div>
 
@@ -971,8 +1042,7 @@ Authorization / Policy Validation
               <strong>PROTOCOL</strong>
               <span>NOT OWNER CONFIGURABLE</span>
               <p>
-                Withdrawal limits and cooldowns are protocol controls rather
-                than strategy settings.
+                Cooldown and withdrawal limits are policy constraints, not ordinary strategy parameters.
               </p>
             </div>
           </div>
@@ -1002,7 +1072,7 @@ Validate Requested Amount
           </div>
 
           <div className="wpEquation">
-            MAX WITHDRAWAL = 50% OF EACH INDIVIDUAL POSITION
+            Wᵢ ≤ 0.5Bᵢ  AND  (t - tₗ) ≥ 365 days
           </div>
 
           <p>
@@ -1018,12 +1088,13 @@ Validate Requested Amount
         <div className="wpSectionBody">
           <span className="wpSectionLabel">SECURITY & AUTHORIZATION</span>
 
-          <h2>ENFORCING FARMER BOUNDARIES</h2>
+          <h2>POLICY AS A CONTROL BOUNDARY</h2>
 
           <p>
-            A portfolio-bearing TBA has a larger security surface than a
-            conventional NFT. dFARMERS therefore separates owner-configured
-            strategy from protocol-controlled authorization and account rules.
+            Once an NFT can be associated with capital and delegated execution, the
+            relevant security problem becomes one of controlling reachable
+            state transitions. The system therefore separates strategy
+            configuration from the authority required to execute a transition.
           </p>
 
           <div className="wpGrid3">
@@ -1083,13 +1154,14 @@ Validate Requested Amount
           </div>
 
           <p>
-            Invalid or unauthorized operations should fail before producing an
-            unintended portfolio state. The protocol boundary is therefore
-            independent from Tractor&apos;s software decision process.
+            The security objective is not to make Tractor incapable of error. It is to
+            ensure that an erroneous or unauthorized instruction does not imply
+            authority. Policy must remain an independent boundary around the
+            execution mechanism.
           </p>
 
           <div className="wpEquation">
-            TRACTOR AUTHORITY ⊆ FARMER PERMISSIONS ⊆ PROTOCOL POLICY
+            A_Tractor ⊆ A_Farmer ⊆ A_Protocol
           </div>
         </div>
       </section>
@@ -1099,12 +1171,13 @@ Validate Requested Amount
         <div className="wpSectionBody">
           <span className="wpSectionLabel">OWNER CONFIGURATION</span>
 
-          <h2>USER CONTROL WITHOUT PROTOCOL OVERRIDE</h2>
+          <h2>INTENTION WITHOUT AUTHORITY ESCALATION</h2>
 
           <p>
-            The Farm interface exposes a defined set of strategy parameters
-            that the dFarmer owner may modify. Changes to on-chain strategy
-            configuration require the applicable network transaction and gas.
+            Owner configuration changes the parameter vector θ governing strategy.
+            Such configuration is therefore a change in intended behavior, not
+            a transfer of protocol authority. The protocol boundary remains
+            external to θ.
           </p>
 
           <div className="wpTable">
@@ -1125,7 +1198,7 @@ Validate Requested Amount
           </div>
 
           <div className="wpEquation">
-            OWNER = STRATEGY CONTROL / PROTOCOL = SECURITY CONTROL / TRACTOR = DELEGATED EXECUTION
+            OWNER → θ (INTENTION) / PROTOCOL → P (AUTHORITY) / TRACTOR → X (EXECUTION)
           </div>
         </div>
       </section>
@@ -1135,21 +1208,25 @@ Validate Requested Amount
         <div className="wpSectionBody">
           <span className="wpSectionLabel">TELEMETRY & VALIDATION</span>
 
-          <h2>MEASUREMENT BEFORE GREATER AUTONOMY</h2>
+          <h2>OBSERVATION BEFORE GREATER AUTONOMY</h2>
 
           <p>
-            The current Tractor implementation is intentionally rule-driven.
-            It should not be characterized as an unrestricted artificial
-            intelligence capable of independently inventing investment
-            decisions.
+            The present Tractor implementation is deliberately rule-driven. This is
+            not a deficiency in terminology; it is an explicit systems
+            decision. The first requirement of an autonomous control system is
+            that its behavior be observable and its permissible actions
+            describable.
           </p>
 
           <p>
-            The initial objective is reliable instruction-following and
-            deterministic execution. The system then collects real-world
-            performance and behavioral data that can be used to evaluate
-            strategy quality, portfolio response, execution reliability, and
-            the value of progressively more sophisticated autonomy.
+            The system therefore begins with a measurable loop:
+
+            observation → rule evaluation → permitted action → observation.
+
+            Telemetry supplies the record from which the behavior of that loop
+            can be evaluated. If T is the telemetry set, then measured behavior
+            B may be regarded as a function of T, and strategy quality can be
+            evaluated against observed outcomes rather than asserted in advance.
           </p>
 
           <div className="wpGrid3">
@@ -1191,7 +1268,7 @@ Validate Requested Amount
           </div>
 
           <div className="wpEquation">
-            RULES → TELEMETRY → DATA → VALIDATION → OPTIMIZATION → GREATER AUTONOMY
+            RULES → OBSERVATION → TELEMETRY → VALIDATION → REFINEMENT → GREATER AUTONOMY
           </div>
         </div>
       </section>
@@ -1201,20 +1278,24 @@ Validate Requested Amount
         <div className="wpSectionBody">
           <span className="wpSectionLabel">DEPLOYMENT & ASSET LAYER</span>
 
-          <h2>ROBINHOOD CHAIN AND TOKENIZED REAL-WORLD ASSETS</h2>
+          <h2>THE ASSET LAYER AND THE APPLICATION BOUNDARY</h2>
 
           <p>
-            dFARMERS is designed to interact with actual tokenized
-            real-world assets on Robinhood Chain rather than simulated
-            representations. The Farmer&apos;s TBA is intended to hold and
-            control the corresponding on-chain positions.
+            The application layer is designed around tokenized real-world assets
+            available through the supported chain environment. dFARMERS does
+            not thereby become the issuer of every underlying instrument; it
+            organizes identity, account association, portfolio logic, policy,
+            and delegated execution around supported assets.
           </p>
 
           <p>
-            The underlying RWA infrastructure provides the tokenized assets.
-            dFARMERS operates at the application layer, providing the
-            Farmer identity, TBA association, strategy system, authorization
-            boundaries, telemetry, and autonomous portfolio-management logic.
+            The architectural boundary can therefore be stated as
+
+            ASSET INFRASTRUCTURE → APPLICATION STATE → CONTROL LOGIC → EXECUTION.
+
+            The underlying asset layer supplies the instruments; dFARMERS
+            supplies the Farmer abstraction and the control system surrounding
+            them.
           </p>
 
           <div className="wpTable">
@@ -1231,11 +1312,12 @@ Validate Requested Amount
           </div>
 
           <p>
-            dFARMERS is not intended to issue the underlying securities, take
-            custody of users&apos; assets as a broker, or represent the
-            underlying financial infrastructure itself. The product is
-            designed as an application and portfolio-management layer around
-            supported tokenized assets.
+            The precise scope of the application should remain distinct from the
+            underlying asset infrastructure. The protocol description here is
+            concerned with the Farmer identity, portfolio account, strategy,
+            policy, telemetry, and execution architecture; the rights,
+            availability, and mechanics of any underlying instrument remain
+            properties of their respective infrastructure.
           </p>
         </div>
       </section>
@@ -1245,31 +1327,35 @@ Validate Requested Amount
         <div className="wpSectionBody">
           <span className="wpSectionLabel">ACCOUNT ABSTRACTION</span>
 
-          <h2>WHY ERC-4337 IS NOT REQUIRED AT THIS STAGE</h2>
+          <h2>WHY ADDITIONAL ABSTRACTION IS NOT YET REQUIRED</h2>
 
           <p>
-            ERC-4337 was evaluated as a potential account-abstraction layer
-            because of the additional capabilities it can provide for
-            smart-account infrastructure. For the current proof of concept,
-            however, those capabilities are not required.
+            ERC-4337 represents an additional abstraction mechanism. The engineering
+            question is therefore not whether the mechanism is sophisticated,
+            but whether the present system requires the capability it provides.
+            For the current architecture, the required account relationship is
+            already supplied through ERC-6551 and the deployed TBA model.
           </p>
 
           <p>
-            ERC-6551 already provides the account relationship required by the
-            Farmer architecture, while the deployed TBA implementation and
-            protocol authorization layer establish the execution boundaries
-            required for Tractor.
+            Introducing another abstraction layer before its capabilities are
+            necessary would enlarge the system without enlarging its required
+            state space. The present composition is therefore intentionally
+            economical:
+
+            ERC-721 + ERC-6551 TBA + authorization + Tractor.
           </p>
 
           <p>
-            The system therefore avoids introducing an additional abstraction
-            layer before its operational requirements justify it. A more
-            sophisticated account-abstraction model may become appropriate in
-            a later development stage, potentially S2, as the system evolves.
+            This is an engineering choice rather than a rejection of account
+            abstraction in principle. If future requirements introduce a
+            capability that materially improves the system, the abstraction
+            boundary can be reconsidered. Until then, unnecessary machinery is
+            avoided.
           </p>
 
           <div className="wpEquation">
-            CURRENT ARCHITECTURE = ERC-721 + ERC-6551 TBA + AUTHORIZATION LAYER + TRACTOR
+            CURRENT ARCHITECTURE = ERC-721 + ERC-6551 TBA + POLICY + TRACTOR
           </div>
         </div>
       </section>
@@ -1279,27 +1365,31 @@ Validate Requested Amount
         <div className="wpSectionBody">
           <span className="wpSectionLabel">MARKET RISK & SYSTEM CLASSIFICATION</span>
 
-          <h2>A PORTFOLIO SYSTEM, NOT A WAGERING MECHANISM</h2>
+          <h2>PORTFOLIO DYNAMICS UNDER UNCERTAINTY</h2>
 
           <p>
-            dFARMERS is designed to function as an automated portfolio system
-            rather than a discrete betting mechanism. Financial risk remains
-            inherent: underlying assets can lose value, strategies can
-            underperform, and no portfolio outcome is guaranteed.
+            The system is structured as a portfolio process rather than as a single
+            discrete event. That structural distinction does not remove market
+            risk. If portfolio value is
+
+            Vₜ = ∑ᵢ qᵢ,ₜ pᵢ,ₜ,
+
+            then changes in prices, quantities, execution conditions, and
+            strategy behavior can all alter Vₜ. No architecture of rules
+            guarantees a favorable result.
           </p>
 
           <p>
-            The structural distinction is that a Farmer represents an ongoing
-            portfolio of supported assets governed by allocation, execution,
-            and risk-management rules. It is not designed around a discrete
-            wager on an uncertain event.
+            A Farmer instead represents a continuing state whose evolution is governed
+            by portfolio rules. Its relevant questions are therefore questions
+            of state, exposure, allocation, execution, and risk rather than the
+            outcome of a single uncertain event.
           </p>
 
           <p>
-            Defined asset universes, allocation parameters, transaction
-            restrictions, trading-frequency limits, liquidation controls, and
-            withdrawal constraints establish the operating boundaries within
-            which Tractor can act.
+            These rules define a bounded state space. The objective is not to eliminate
+            uncertainty, which cannot be done, but to constrain the set of
+            transitions through which the system may respond to uncertainty.
           </p>
 
           <div className="wpGrid2">
@@ -1329,7 +1419,7 @@ Validate Requested Amount
           </div>
 
           <div className="wpEquation">
-            dFARMER = IDENTITY / TBA = ACCOUNT / ASSETS = PORTFOLIO / TRACTOR = OPERATOR
+            F = IDENTITY + ACCOUNT + ASSET DOMAIN + STRATEGY + POLICY + EXECUTION
           </div>
         </div>
       </section>
@@ -1339,34 +1429,31 @@ Validate Requested Amount
         <div className="wpSectionBody">
           <span className="wpSectionLabel">LIMITATIONS</span>
 
-          <h2>STANDARD VS. PROTOCOL IMPLEMENTATION</h2>
+          <h2>STANDARD, IMPLEMENTATION, AND BEHAVIOR</h2>
 
           <p>
-            ERC-721 defines a non-fungible token standard. ERC-6551 defines an
-            architecture for Token-Bound Accounts. Neither standard, by
-            itself, defines the dFARMERS strategy engine, Farmer-generation
-            process, four-asset assignment, automatic mint-capital allocation,
-            withdrawal restrictions, Tractor authorization, telemetry system,
-            or autonomous portfolio behavior.
+            ERC-721 and ERC-6551 define infrastructure primitives. Neither standard,
+            by itself, defines the dFARMERS generation function, asset-domain
+            rules, allocation mechanism, strategy engine, withdrawal policy,
+            Tractor authorization, telemetry system, or autonomous behavior.
           </p>
 
           <p>
-            Those characteristics belong to the dFARMERS implementation:
-            its contracts, TBA implementation, generation mechanism,
-            authorization logic, execution infrastructure, and supporting
-            systems. Their security and enforceability therefore depend upon
-            the actual deployed implementation.
+            Those characteristics belong to the deployed implementation. Consequently,
+            claims about security, enforcement, or autonomous behavior must be
+            evaluated against the actual contracts, account implementation,
+            authorization logic, execution infrastructure, and operational
+            controls rather than inferred from the standards alone.
           </p>
 
           <p>
-            Likewise, the existence of an ERC-6551 TBA does not independently
-            guarantee any particular trading, withdrawal, or authorization
-            behavior. Those properties must be enforced by the deployed
-            account and protocol architecture.
+            The existence of a TBA therefore does not imply a particular policy. The
+            account relationship and the behavioral policy are separate
+            propositions and must be verified independently.
           </p>
 
           <div className="wpEquation">
-            STANDARD = INFRASTRUCTURE / PROTOCOL = IMPLEMENTATION
+            STANDARD ≠ POLICY / STANDARD ≠ STRATEGY / STANDARD ≠ EXECUTION
           </div>
         </div>
       </section>
@@ -1376,73 +1463,68 @@ Validate Requested Amount
         <div className="wpSectionBody">
           <span className="wpSectionLabel">CONCLUSION</span>
 
-          <h2>THE dFARMER AS A CONSTRAINED AUTONOMOUS PORTFOLIO</h2>
+          <h2>THE dFARMER AS A CONSTRAINED FEEDBACK SYSTEM</h2>
 
           <p>
-            dFARMERS defines the dFarmer as a programmable portfolio
-            primitive composed of identity, account infrastructure,
-            DERP-engaged generation, four fixed assets, capital, configurable
-            strategy, protocol policy, and delegated autonomous execution.
+            The dFarmer may be understood as a computational portfolio primitive whose
+            state is distributed across identity, account, generated asset
+            domain, capital, strategy, policy, and execution. Its significance
+            lies not in any single component, but in the controlled relation
+            among them.
           </p>
 
           <div className="wpEquation">
-            ERC-721
+            STATE₀ = (IDENTITY, ACCOUNT, U, CAPITAL)
             →
-            ERC-6551 TBA
+            OBSERVATION
             →
-            DERP + ENTROPY
+            STRATEGY
             →
-            PERSONALITY
+            POLICY
             →
-            4 ASSETS
+            EXECUTION
             →
-            MINT ETH
-            →
-            AUTOMATIC ALLOCATION
-            →
-            OWNER STRATEGY
-            →
-            TRACTOR
-            →
-            AUTHORIZED EXECUTION
+            STATEₜ₊₁
           </div>
 
           <p>
-            The ERC-721 establishes who the Farmer is. The ERC-6551
-            Token-Bound Account provides its portfolio account. DERP is engaged
-            in the generation process; entropy resolves the Farmer&apos;s
-            traits and personality; and that generated state determines the
-            four underlying assets that form the Farmer&apos;s fixed portfolio
-            universe.
+            The ERC-721 establishes identity. The TBA establishes the associated
+            account. DERP participates in generation; entropy resolves the
+            generated state; personality and generation rules determine the
+            asset domain. These operations establish the initial conditions from
+            which later portfolio behavior proceeds.
           </p>
 
           <p>
-            Mint ETH is automatically allocated across those four assets.
-            Thereafter, the owner may modify the Farmer&apos;s strategy and
-            operating parameters, but cannot replace the underlying asset
-            universe. Tractor evaluates the portfolio and submits permitted
-            actions, while the TBA implementation and protocol authorization
-            layer enforce the boundaries under which those actions may occur.
+            Mint capital is mapped into the generated asset domain according to the
+            applicable allocation rule. The owner may modify permitted strategy
+            parameters without redefining that domain. Tractor then participates
+            in the feedback loop, while the TBA and policy layer determine which
+            proposed transitions are admissible.
           </p>
 
           <p>
-            The current system deliberately represents constrained autonomy
-            rather than unrestricted artificial intelligence. Its strategies
-            are defined, its execution is observable, and its system events
-            are collected for empirical evaluation. Real-world data can then
-            inform future increases in autonomous capability.
+            The present system is therefore an instance of constrained autonomy. Its
+            rules are explicit, its execution is observable, and its events can
+            be measured. Greater autonomy should follow evidence rather than
+            precede it: a system should first establish that its feedback loop
+            is measurable before granting that loop greater freedom.
           </p>
 
           <p>
-            The resulting architecture is intended to establish a foundation
-            for progressively more capable on-chain portfolio agents:
-            deterministic execution first, telemetry and validation second,
-            and increasingly sophisticated autonomy only as evidence supports
-            it.
+            The intended progression is consequently:
+            <br />
+            <br />
+            deterministic rules → measurement → validation → refinement
+            → greater autonomy.
+            <br />
+            <br />
+            The governing principle is simple: autonomy is safest when the
+            system can observe the consequences of its own actions.
           </p>
 
           <div className="wpEquation">
-            CONSTRAINED EXECUTION → EMPIRICAL VALIDATION → PROGRESSIVE AUTONOMY
+            OBSERVATION → DECISION → POLICY → EXECUTION → OBSERVATION
           </div>
         </div>
       </section>
@@ -1474,7 +1556,7 @@ Validate Requested Amount
           Robinhood Chain Documentation
         </a>
       </section>
-
+<Footer />
     </main>
   );
 }
